@@ -1,0 +1,4 @@
+#!/bin/sh
+clipboard=$(xclip -o)
+qrencode -s 6 -l H -o /tmp/qr.png $clipboard
+feh /tmp/qr.png

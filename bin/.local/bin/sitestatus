@@ -1,0 +1,40 @@
+#!/bin/bash
+
+RED='\033[1;41m'
+BLUE='\033[1;44m'
+RESET='\033[0m'
+
+ONLINE="${BLUE}▒░ online ${RESET}"
+OFFLINE="${RED}▒░ offline${RESET}"
+
+# PUT SITES IN THIS LIST
+sites=("beanrob.com" "scrungle.online")
+
+beanrob=$(ping -c 1 beanrob.com > /dev/null; echo $?)
+scrungle=$(ping -c 1 scrungle.online > /dev/null; echo $?)
+
+longest=0
+for site in "${sites[@]}"
+do
+    length=$(echo "$site" | wc -m)
+    if [ $length -gt $longest ]; then
+        longest=$length
+    fi
+done
+
+for site in "${sites[@]}"
+do
+    status=$(ping -c 1 $site > /dev/null; echo $?)
+    length=$(echo "$site" | wc -m)
+    lendiff=$(($longest-$length+1))
+    if [ $1 = "beanstat" ]; then
+        printf "│  $site""%-""$lendiff""s"
+    else
+        printf "$site""%-""$lendiff""s"
+    fi
+    if [ $status = "0" ]; then
+        echo -e "$ONLINE"
+    else
+        echo -e "$OFFLINE"
+    fi
+done

@@ -1,0 +1,211 @@
+
+"       _
+"__   _(_)_ __ ___  _ __ ___
+"\ \ / / | '_ ` _ \| '__/ __|
+" \ V /| | | | | | | | | (__
+"  \_/ |_|_| |_| |_|_|  \___|
+
+
+" VUNDLE ----------------------------------------------------------------------------------- {{{
+filetype off
+
+" Set the runtime path to include Vundle and initialise
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Download plug-ins to the plugged directory
+call vundle#begin('~/.vim/plugged')
+
+" Let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on
+" }}}
+
+" SETTINGS --------------------------------------------------------------------------------- {{{
+set t_Co=256 			" Enable 256 colours
+set nu			        " Enable line numbers
+syntax on       	    " Enable syntax highlights
+set tabstop=4		    " How many spaces an indent is
+set shiftwidth=4
+set expandtab		    " Use spaces when tabbing
+set incsearch		    " Enable incremental search (search
+						" updates as you change the query)
+set hlsearch		    " Enable searching highlighted text
+set termwinsize=12x0	" Set terminal size (rows)
+set splitbelow		    " Always split windows below
+set mouse=a		    	" Enable mouse drag on window splits
+set nowrap
+
+" set list
+" set listchars=tab:⏵\ ,trail:‧
+
+set scrolloff=8
+set sidescrolloff=8
+
+set clipboard=unnamedplus
+
+set ignorecase
+set smartcase
+
+" Syntax highlighting for .rasi
+au BufNewFile,BufRead /*.rasi setf css
+
+" Command autocompletion
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+"augroup dynamic_smartcase
+"    autocmd!
+"    autocmd CmdLineEnter : set nosmartcase
+"    autocmd CmdLineLeave : set smartcase
+"augroup END
+" }}}
+
+" KEYBINDINGS ------------------------------------------------------------------------------ {{{
+let mapleader = " "
+
+" inoremap ii <Esc>
+noremap <leader>t :term<CR>
+noremap <leader>m :MinimapToggle<CR>
+
+" noremap <leader>r :Ranger<CR>
+" noremap <leader>f :NERDTreeToggle<CR>
+
+noremap <leader>fm :Ranger<CR>
+noremap <leader>ft :NERDTreeToggle<CR>
+
+" tnoremap <Esc> <C-\><C-n>:q!<CR>
+
+" use Space + n to toggle the line number counting method
+function! g:ToggleNuMode()
+	if &nu == 1
+		set nonu   " turn off nu
+		set rnu
+	else
+		set nornu   " turn off rnu
+		set nu
+	endif
+endfunction
+nnoremap <silent><leader>n :call g:ToggleNuMode()<CR>
+" }}}
+
+" COLOURS ---------------------------------------------------------------------------------- {{{
+Plugin 'dracula/vim',{'name':'dracula'}
+Plugin 'altercation/vim-colors-solarized',{'name':'solarized'}
+Plugin 'bluz71/vim-moonfly-colors',{'name':'moonfly'}
+Plugin 'sainnhe/everforest'
+Plugin 'dylanaraps/wal.vim',{'name':'wal'}
+Plugin 'morhetz/gruvbox',{'name':'gruvbox'}
+
+let g:everforest_background = 'hard'
+let g:everforest_better_performance = 1
+
+" if has('termguicolors')
+"   set termguicolors
+" endif
+
+set background=dark		" Chooses background colour
+colorscheme wal
+
+" hi Normal guibg=NONE ctermbg=NONE
+" }}}
+
+
+" PLUGINS ---------------------------------------------------------------------------------- {{{
+Plugin 'sheerun/vim-polyglot'						" Syntax highlighting plugin
+
+Plugin 'Xe/lolcode.vim'								" Syntax highlighting for Lolcode
+
+Plugin 'jiangmiao/auto-pairs'						" Automatic pairs or bracets, quotes, etc.
+let g:AutoPairsShortcutToggle = '<C-P>'				" Set Ctrl+P to toggle
+
+Plugin 'preservim/nerdtree'							" File tree plugin
+let NERDTreeShowHidden=1							" Show hidden files in tree
+" autocmd VimEnter * NERDTree | wincmd p				" Open NERDTree when opening Vim, close Vim if only Nerdtree is open
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+													" Use :NERDTree to open the file tree
+autocmd VimEnter * NERDTreeToggle
+
+" Plugin 'ryanoasis/vim-devicons'						" Makes NERDTree show icons
+set encoding=UTF-8
+
+" Plugin 'vim-airline/vim-airline'					" Status line
+
+"Plugin 'powerline/powerline'
+
+Plugin 'yggdroot/indentline'						" Shows indentation levels
+
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'	" Makes filetree look cooler
+
+Plugin 'severin-lemaignan/vim-minimap'				" Code minimap
+													" :Minimap opens,  :MinimapClose closes
+autocmd VimEnter * MinimapToggle
+
+Plugin 'francoiscabrol/ranger.vim'					" Open Ranger with :Ranger
+
+Plugin 'mhinz/vim-startify'
+
+Plugin 'lilydjwg/colorizer'							" Colorizer plugin
+
+Plugin 'tpope/vim-fugitive'							" Git wrapper
+
+Plugin 'airblade/vim-gitgutter'						" Shows changes between local and remote
+
+Plugin 'preservim/nerdcommenter'					" Allows easy commenting of code
+
+Plugin 'ervandew/supertab'							" Tab complete
+" }}}
+
+" AIRLINE ---------------------------------------------------------------------------------- {{{
+"let g:airline_powerline_fonts=1
+"
+"if !exists('g:airline_symbols')
+	"let g:airline_symbols = {}
+"endif
+
+"let g:airline_left_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.maxlinenr = ''
+
+"let g:airline#extensions#tabline#enabled = 1
+" }}}
+
+" STARTIFY --------------------------------------------------------------------------------- {{{
+let g:startify_custom_header = [
+	\'          _',
+	\'   __   _(_)_ _ ____',
+	\'   \ \ / / | `_`  _  \',
+	\'    \ V /| | | | | | |',
+	\'     \_/ |_|_| |_| |_|',
+	\'',
+	\ ]
+
+let g:startify_list_order = [
+    \ ['       Most recently used files in '. getcwd() .':'],
+    \ 'dir',
+    \ ['       Most recently used files:'],
+    \ 'files',
+    \ ['       Sessions:'],
+    \ 'sessions',
+    \ ['       Bookmarks:'],
+    \ 'bookmarks',
+    \ ]
+let g:startify_bookmarks = [ {'v': '~/.vimrc'}, {'s': '~/.config/fish/config.fish'}, {'w': '~/.config/qtile/config.py'}, {'t': '~/.config/kitty/kitty.conf'}, {'c': '~/.config/picom.conf'}, {'n': '~/.config/neofetch/config.conf'} ]
+let g:startify_files_number = 5
+" }}}
+
+" RANGER ----------------------------------------------------------------------------------- {{{
+let g:ranger_map_keys = 0
+" }}}
+
+" COMMENTER -------------------------------------------------------------------------------- {{{
+" let g:NERDSpaceDelims = 1
+let g:NERDCreateDefaulsMappings = 0
+let g:NERDCompactSexyComs = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDToggleCheckAllLines = 1
+" }}}

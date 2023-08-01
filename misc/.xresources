@@ -1,0 +1,23 @@
+! X colors.
+#include ".cache/wal/colors.Xresources"
+
+XTerm.vt1--.font: trigon
+
+iw3m.foreground: *.foreground
+iw3m.background: *.background
+iw3m.color0: *.color0
+iw3m.color1: *.color1
+iw3m.color2: *.color2
+iw3m.color3: *.color3
+iw3m.color4: *.color4
+iw3m.color5: *.color5
+iw3m.color6: *.color6
+iw3m.color7: *.color7
+iw3m.color8: *.color8
+iw3m.color9: *.color9
+iw3m.color10: *.color10
+iw3m.color11: *.color11
+iw3m.color12: *.color12
+iw3m.color13: *.color13
+iw3m.color14: *.color14
+iw3m.color15: *.color15

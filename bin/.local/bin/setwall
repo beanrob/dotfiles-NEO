@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# Get full path of wallpaper
+walldir=$HOME'/pics/1 wallpapers'
+if [ "$2" = "-p" ]; then
+    wallpaper="$walldir/$1"
+else
+    wallpaper="$walldir/$1.png"
+fi
+
+# Set wallpaper using pywal
+if [ "$3" = "-w" ]; then
+    feh --bg-fill "$wallpaper"
+    echo "~/$walldir/$1" > ~/.cache/wal/wal
+else
+    wal -i "$wallpaper"
+fi
+
+# Most of the below need to wait a bit for the wal cache to generate
+sleep 0.5s
+
+# qtile cmd-obj -o cmd -f restart
+wal-steam
+cp ~/.cache/wal/betterlockscreenrc ~/.config/betterlockscreenrc
+cp ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
+~/.scripts/theming/update-gtkrc.py
+~/.scripts/theming/lockscreen.py
+xrdb ~/.xresources
+pywal-discord
+# betterlockscreen -u "$wallpaper"

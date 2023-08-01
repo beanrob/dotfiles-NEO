@@ -1,0 +1,4 @@
+#!/bin/sh
+curl -s wttr.in/stratford > /tmp/weather
+sed "s,\x1B\[[0-9;]*[a-zA-Z],,g" /tmp/weather > /tmp/weather-clean
+cat /tmp/weather

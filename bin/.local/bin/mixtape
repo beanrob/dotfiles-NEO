@@ -1,0 +1,2 @@
+#!/bin/sh
+clear && mpv https://soundcloud.com/bean499/likes --force-window --script=~/.config/mpv/mpris.so --shuffle

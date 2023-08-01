@@ -1,0 +1,22 @@
+#!/bin/sh Compositor
+picom --experimental-backend -b &
+
+# Notification daemon
+dunst &
+
+# Location daemon & redshift
+/usr/lib/geoclue-2.0/demos/agent &
+redshift-gtk &
+
+# Network manager
+nm-applet &
+
+# Enable when using MPD
+mpDris2 &
+
+screenmenu both &
+# screenmenu both --left &
+battery-notify &
+
+~/.fehbg &
+xrdb ~/.xresources

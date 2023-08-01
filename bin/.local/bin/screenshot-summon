@@ -1,0 +1,5 @@
+#!/bin/sh
+
+$file=$(screenshot)
+cd "~/pics/0 screenshots/"
+summon $file

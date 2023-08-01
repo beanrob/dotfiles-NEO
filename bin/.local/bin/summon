@@ -1,0 +1,3 @@
+#!/bin/sh
+file=$1
+curl -X POST -F "file=@$file" -F 'password=8AAqYt3V.25%T/J6,!]Cpzwh*hqavq:w' 'https://scrungle.online/upload/upload.php'

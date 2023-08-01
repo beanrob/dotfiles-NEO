@@ -1,0 +1,17 @@
+#!/bin/sh
+dir=$(pwd)
+datetime=$(date +%Y-%m-%d_%H-%M-%S)
+if [ $1 = "beanrob.com" ]; then
+    mkdir -p "${HOME}/data/backup/beanrob.com/${datetime}"
+    cd "${HOME}/data/backup/beanrob.com/${datetime}"
+    mkdir nginx srv
+    rsync -tavzP opc@130.162.170.133:/usr/share/nginx/ ./nginx/
+    rsync -tavzP opc@130.162.170.133:/srv/ ./srv/
+elif [ $1 = "scrungle.online"  ]; then
+    mkdir -p "${HOME}/data/backup/scrungle.online/${datetime}"
+    cd "${HOME}/data/backup/scrungle.online/${datetime}"
+    mkdir nginx srv
+    rsync -tavzP opc@130.162.189.204:/usr/share/nginx/ ./nginx/
+    rsync -tavzP opc@130.162.189.204:/srv/ ./srv/
+fi
+cd $dir

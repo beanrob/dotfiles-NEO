@@ -1,0 +1,83 @@
+#!/bin/bash
+
+RED='\033[1;41m'
+BLUE='\033[1;44m'
+RESET='\033[0m'
+BOLD='\033[1m'
+
+# Status script to check:
+# Whether my websites are online
+# Emails
+# Backup
+# Weather
+
+figlet -f smslant.flf beanstat | head -n -1 | lolcat -F 0.5
+#        __                     __       __
+#       / /  ___ ___ ____  ___ / /____ _/ /_
+#      / _ \/ -_) _ `/ _ \(_-</ __/ _ `/ __/
+#     /_.__/\__/\_,_/_//_/___/\__/\_,_/\__/
+echo "┌─────────────────────────────────────"
+echo "│"
+
+echo -e "├─ ${BOLD}backups${RESET}"
+dir=$(pwd)
+cd ~/data/backup
+
+longest=0
+for file in ./*; do
+    len=$(echo "$file" | wc -m)
+    length=$(($len - 2))
+    if [ $length -gt $longest ]; then
+        longest=$length
+    fi
+done
+
+NEW="${BLUE}▒░"
+OLD="${RED}▒░"
+
+now=$(date +%s)
+for file in ./*; do
+    if [ -d $file  ]; then
+        newest=$(ls -r $file | rev | cut -d ' ' -f 1 | rev)
+        date=${newest:0:10}
+        seconds=$(date -d $date +%s)
+        secdiff=$(($now - $seconds))
+        daydiff=$(($secdiff / (60 * 60 * 24)))
+        name=${file:2}
+
+        length=$(echo "$name" | wc -m)
+        lendiff=$(($longest - $length + 1))
+        printf "│  $name""%-""$lendiff""s"
+
+        if [ $daydiff = 0 ]; then
+            echo -e "${NEW} Last backed up ${BOLD}today ${RESET}"
+        elif [ $daydiff = 1 ]; then
+            echo -e "${NEW} Last backed up ${BOLD}yesterday ${RESET}"
+        elif [ $daydiff -gt 7 ]; then
+            echo -e "${OLD} Last backed up ${BOLD}${daydiff} days ago ${RESET}"
+        else
+            echo -e "${NEW} Last backed up ${BOLD}${daydiff} days ago ${RESET}"
+        fi
+    fi
+done
+
+echo "│"
+
+internet=$(ping -c 1 bbc.co.uk > /dev/null; echo $?)
+if [ $internet = "0"  ]; then
+    echo -e "├─ ${BOLD}weather${RESET}"
+    if [ ! -f /tmp/weather  ]; then
+        weather > /dev/null
+    fi
+    weather=$(sed -n '3p' "/tmp/weather-clean" | cut -c 17-)
+    temp=$(sed -n '4p' "/tmp/weather-clean" | cut -c 17-)
+    echo "│  $weather"
+    echo "│  $temp"
+
+    echo "│"
+    echo -e "├─ ${BOLD}site statuses${RESET}"
+    sitestatus beanstat
+else
+    echo -e "├─ ${BOLD}no internet connection${RESET}"
+fi
+echo "╵"

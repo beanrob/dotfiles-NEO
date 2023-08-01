@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cwd=$(pwd)
+cd
+file=$(date +%Y-%m-%d_%H-%M-%S.png)
+scrot -f $file
+mv $file "pics/0 screenshots/"
+notify-send "Screenshot taken." --icon=image-missing
+cd $cwd
+echo $file
