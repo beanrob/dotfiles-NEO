@@ -1,0 +1,12 @@
+# vim
+vim/.vim/plugges
+vim/.vim/viminfo
+
+# mpd
+mpd/.config/ncmpcpp/error.log
+mpd/.config/mpd/database
+mpd/.config/mpd/state
+mpd/.config/mpd/sticker.sql
+
+# fish
+fish/.config/fish/fish_variables
