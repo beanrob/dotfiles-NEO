@@ -7,6 +7,7 @@ mpd/.config/ncmpcpp/error.log
 mpd/.config/mpd/database
 mpd/.config/mpd/state
 mpd/.config/mpd/sticker.sql
+mpd/.config/mpdscribble/log
 
 # fish
 fish/.config/fish/fish_variables

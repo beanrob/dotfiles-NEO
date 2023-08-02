@@ -13,6 +13,7 @@ nm-applet &
 
 # Enable when using MPD
 mpDris2 &
+mpdscribble -D --conf ~/.config/mpdscribble/mpdscribble.conf &
 
 screenmenu both &
 # screenmenu both --left &
