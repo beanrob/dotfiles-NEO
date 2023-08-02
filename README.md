@@ -8,11 +8,39 @@ To install the dotfiles:
 ```
 git clone https://github.com/BeanRob/dots-NEO ~/dots
 cd dots
+# Now we can use stow to install each module
+# I will use vim as an example
+
 # Install vim module:
 stow vim
+# Install vim plugins:
+vim +PluginInstall +qall
 # Uninstall vim module:
 stow -D vim
 ```
+
+## Modules & Packages
+
+### Single Package Modules
+- alacritty
+- fish
+- vim
+
+### Multi Package Modules
+- i3
+    - i3wm
+    - i3bar
+    - i3status
+- mpd
+    - mpd
+    - ncmpcpp
+    - mpDris2
+    - mpdscribble
+
+### Standalone Modules
+- bin
+- misc
+
 ## Disclaimer
 You can use and fork this repo as you want, but I take no responsibility for
 mishaps that are a result of this. If anything *is* found to be broken, feel
