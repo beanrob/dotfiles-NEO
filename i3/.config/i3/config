@@ -76,7 +76,8 @@ floating_modifier $mod
 # tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec $TERM
+bindsym $mod+Return exec $TERM --class term
+bindsym $mod+Control+Return exec $TERM -e tmux-main --class tmux
 
 # kill focused window
 bindsym $mod+q kill
@@ -254,7 +255,7 @@ client.background       $fg
 gaps inner 24
 # gaps outer 24
 
-for_window [class="Alacritty"] floating enable
+for_window [class="term"] floating enable
 for_window [class="feh"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="firefox"] border pixel 0
