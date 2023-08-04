@@ -1,0 +1,3 @@
+#!/bin/sh
+art=$(playerctl metadata mpris:artUrl | cut -c 8-)
+feh "${art}" -g 256x256 --scale-down

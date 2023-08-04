@@ -1,0 +1,2 @@
+def_key "Q"
+    run_external_command "song-cover"
