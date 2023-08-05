@@ -31,6 +31,7 @@ stow -D vim
     - i3wm
     - i3bar
     - i3status
+    - pywal
 - mpd
     - mpd
     - ncmpcpp
