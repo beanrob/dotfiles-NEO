@@ -1,3 +1,6 @@
 #!/bin/sh
+. ~/docs/0\ IMPORTANT/SCRUNGLE\ KEY.sh
 file=$1
-curl -X POST -F "file=@$file" -F 'password=8AAqYt3V.25%T/J6,!]Cpzwh*hqavq:w' 'https://scrungle.online/upload/upload.php'
+output=$(curl -s -X POST -F "file=@$file" -F "password=$key" 'https://scrungle.online/upload/upload.php')
+removed=$(echo $output | rev | cut -c 1- | rev)
+echo $removed
