@@ -7,6 +7,10 @@ if [ $1 = "beanrob.com" ]; then
     mkdir nginx srv
     rsync -tavzP opc@130.162.170.133:/usr/share/nginx/ ./nginx/
     rsync -tavzP opc@130.162.170.133:/srv/ ./srv/
+elif [ $1 = "mc"  ]; then
+    mkdir -p "${HOME}/data/backup/mc/${datetime}"
+    cd "${HOME}/data/backup/mc/${datetime}"
+    rsync -tavzP /home/bean/.local/share/multimc/instances/Beta\ 1.7.3/.minecraft/saves/ ./
 elif [ $1 = "scrungle.online"  ]; then
     mkdir -p "${HOME}/data/backup/scrungle.online/${datetime}"
     cd "${HOME}/data/backup/scrungle.online/${datetime}"
