@@ -121,3 +121,12 @@ if test -z "$DISPLAY"
 	end
 end
 # }}}
+
+# RUN BEANSTAT IN TMUX--------------------------------------------------------------------- {{{
+if test -n "$TMUX"
+	if not test -e "/tmp/tmux-main-created"
+		beanstat
+		touch /tmp/tmux-main-created
+	end
+end
+# }}}
