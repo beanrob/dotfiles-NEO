@@ -6,12 +6,11 @@ RESET='\033[0m'
 
 ONLINE="${BLUE}▒░ online ${RESET}"
 OFFLINE="${RED}▒░ offline${RESET}"
+ONLINE="${BLUE}▊▋▌▍▎online ${RESET}"
+OFFLINE="${RED}▊▋▌▍▎offline${RESET}"
 
 # PUT SITES IN THIS LIST
-sites=("beanrob.com" "scrungle.online")
-
-beanrob=$(ping -c 1 beanrob.com > /dev/null; echo $?)
-scrungle=$(ping -c 1 scrungle.online > /dev/null; echo $?)
+sites=("beanrob.com" "scrungle.online" "bruno.scrungle.online")
 
 longest=0
 for site in "${sites[@]}"
