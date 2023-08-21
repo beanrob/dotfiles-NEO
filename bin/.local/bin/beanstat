@@ -32,8 +32,10 @@ for file in ./*; do
     fi
 done
 
-NEW="${BLUE}▒░"
-OLD="${RED}▒░"
+NEW="${BLUE}▊▋▌▍▎"
+OLD="${RED}▊▋▌▍▎"
+#NEW="${BLUE}▒░"
+#OLD="${RED}▒░"
 
 now=$(date +%s)
 for file in ./*; do
@@ -50,13 +52,13 @@ for file in ./*; do
         printf "│  $name""%-""$lendiff""s"
 
         if [ $daydiff = 0 ]; then
-            echo -e "${NEW} Last backed up ${BOLD}today ${RESET}"
+            echo -e "${NEW}Last backed up ${BOLD}today ${RESET}"
         elif [ $daydiff = 1 ]; then
-            echo -e "${NEW} Last backed up ${BOLD}yesterday ${RESET}"
+            echo -e "${NEW}Last backed up ${BOLD}yesterday ${RESET}"
         elif [ $daydiff -gt 7 ]; then
-            echo -e "${OLD} Last backed up ${BOLD}${daydiff} days ago ${RESET}"
+            echo -e "${OLD}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
         else
-            echo -e "${NEW} Last backed up ${BOLD}${daydiff} days ago ${RESET}"
+            echo -e "${NEW}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
         fi
     fi
 done
@@ -75,6 +77,11 @@ if [ $internet = "0"  ]; then
     echo "│  $temp"
 
     echo "│"
+    echo -e "├─ ${BOLD}updates${RESET}"
+    amount=$(checkupdates | wc -l)
+    echo -e "│  ${BOLD}${amount}${RESET} packages need updating"
+    echo "│"
+
     echo -e "├─ ${BOLD}site statuses${RESET}"
     sitestatus beanstat
 else
