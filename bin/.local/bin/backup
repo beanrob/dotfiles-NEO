@@ -11,6 +11,10 @@ elif [ $1 = "mc"  ]; then
     mkdir -p "${HOME}/data/backup/mc/${datetime}"
     cd "${HOME}/data/backup/mc/${datetime}"
     rsync -tavzP /home/bean/.local/share/multimc/instances/Beta\ 1.7.3/.minecraft/saves/ ./
+elif [ $1 = "ssh"  ]; then
+    mkdir -p "${HOME}/data/backup/ssh/${datetime}"
+    cd "${HOME}/data/backup/mc/${datetime}"
+    rsync -tavzP /home/bean/.ssh/ ./
 elif [ $1 = "scrungle.online"  ]; then
     mkdir -p "${HOME}/data/backup/scrungle.online/${datetime}"
     cd "${HOME}/data/backup/scrungle.online/${datetime}"
