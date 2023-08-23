@@ -244,7 +244,7 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $color4 $color4 $color4 $color4   $color4
+client.focused          $color2 $color2 $color2 $color2   $color2
 client.focused_inactive $bg     $bg     $bg     $bg       $bg
 client.unfocused        $bg     $bg     $bg     $bg       $bg
 client.urgent           $color6 $color6 $color6 $color6   $color6
