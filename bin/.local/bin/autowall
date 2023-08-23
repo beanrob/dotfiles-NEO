@@ -6,9 +6,9 @@ wal -n -i "$1"
 . "${HOME}/.cache/wal/colors.sh"
 # echo convert "$1" -geometry x1000\> -gravity center -background "$background" -extent 2560x1080 "~/pics/1 wallpapers/autowalls/$2"
 if [ "$3" = "--border" ]; then
-    convert "$1" -geometry x994\> -bordercolor "$color1" -border 10x10 -gravity center -background "$background" -extent 2560x1098 -gravity South -chop 0x18 "$2"
+    convert "$1" -geometry x982\> -bordercolor "$color1" -border 10x10 -gravity center -background "$background" -extent 2560x1098 -gravity South -chop 0x24 "$2"
 else
-    convert "$1" -geometry x1014\> -gravity center -background "$background" -extent 2560x1098 -gravity South -chop 0x18 "$2"
+    convert "$1" -geometry x1002\> -gravity center -background "$background" -extent 2560x1098 -gravity South -chop 0x24 "$2"
 fi
 cd
 mv *.png ~/pics/1\ wallpapers/autowalls/
