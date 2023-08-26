@@ -1,4 +1,6 @@
 # dotfiles NEO
+![scrot](scrot.png)
+
 Finally got around to organising my dotfiles. This system uses
 [stow](http://www.gnu.org/software/stow/) to organise everything, as detailed
 in [this article](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
