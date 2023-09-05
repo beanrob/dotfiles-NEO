@@ -1,25 +1,37 @@
 #!/bin/sh
-dir=$(pwd)
 datetime=$(date +%Y-%m-%d_%H-%M-%S)
+
 if [ $1 = "beanrob.com" ]; then
     mkdir -p "${HOME}/data/backup/beanrob.com/${datetime}"
     cd "${HOME}/data/backup/beanrob.com/${datetime}"
     mkdir nginx srv
     rsync -tavzP opc@130.162.170.133:/usr/share/nginx/ ./nginx/
     rsync -tavzP opc@130.162.170.133:/srv/ ./srv/
+
 elif [ $1 = "mc"  ]; then
     mkdir -p "${HOME}/data/backup/mc/${datetime}"
     cd "${HOME}/data/backup/mc/${datetime}"
-    rsync -tavzP /home/bean/.local/share/multimc/instances/Beta\ 1.7.3/.minecraft/saves/ ./
+    mkdir local
+    mkdir server
+    rsync -tavzP /home/bean/.local/share/multimc/instances/Beta\ 1.7.3/.minecraft/saves/ ./local/
+    rsync -tavzP /home/bean/game/pc/mc-b1.7.3-server/ ./server/
+
 elif [ $1 = "ssh"  ]; then
     mkdir -p "${HOME}/data/backup/ssh/${datetime}"
-    cd "${HOME}/data/backup/mc/${datetime}"
+    cd "${HOME}/data/backup/ssh/${datetime}"
     rsync -tavzP /home/bean/.ssh/ ./
+
 elif [ $1 = "scrungle.online"  ]; then
     mkdir -p "${HOME}/data/backup/scrungle.online/${datetime}"
     cd "${HOME}/data/backup/scrungle.online/${datetime}"
     mkdir nginx srv
     rsync -tavzP opc@130.162.189.204:/usr/share/nginx/ ./nginx/
     rsync -tavzP opc@130.162.189.204:/srv/ ./srv/
+
+elif [ $1 = "gpg" ]; then
+    mkdir -p "${HOME}/data/backup/gpg/"
+    gpg --export-secret-keys --armor --output ${HOME}/data/backup/gpg/${datetime}.asc
+    # then do the following to import:
+    # gpg --import backup.asc
+
 fi
-cd $dir
