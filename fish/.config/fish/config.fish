@@ -89,7 +89,6 @@ alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
 
 # Replace base commands with exa
 alias ls="exa -lh --icons --no-permissions"
-alias ls="exa -lha --icons --no-permissions"
 alias ld="exa -lhD --icons --no-permissions"
 # alias tree=exa -a --icons --tree		# Shows hidden files
 alias tree="exa --icons --tree"			# Doesn't show hidden files
@@ -118,15 +117,6 @@ if test -z "$DISPLAY"
 		exec startx
 	else
 		echo -e "Loading Fish Shell...\n"
-	end
-end
-# }}}
-
-# RUN BEANSTAT IN TMUX--------------------------------------------------------------------- {{{
-if test -n "$TMUX"
-	if not test -e "/tmp/tmux-main-created"
-		beanstat
-		touch /tmp/tmux-main-created
 	end
 end
 # }}}
