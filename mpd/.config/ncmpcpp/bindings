@@ -1,2 +1,11 @@
 def_key "Q"
     run_external_command "song-cover"
+
+def_key "l"
+  next_column
+def_key "h"
+  previous_column
+def_key "k"
+  scroll_up
+def_key "j"
+  scroll_down
