@@ -23,6 +23,7 @@ filetype plugin indent on
 " }}}
 
 " SETTINGS --------------------------------------------------------------------------------- {{{
+set encoding=UTF-8
 set nocompatible 		" Use vim settings rather than vi
 
 set t_Co=256 			" Enable 256 colours
@@ -45,7 +46,6 @@ set nowrap
 set tabstop=4		    " How many spaces an indent is
 set shiftwidth=4
 set expandtab			" Use spaces when tabbing
-set paste 				" Do not auto indent when pasting
 set pastetoggle=<F3>
 
 set scrolloff=8
@@ -77,6 +77,9 @@ autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buff
 
 " KEYBINDINGS ------------------------------------------------------------------------------ {{{
 let mapleader = " "
+
+noremap U :redo<CR>
+noremap Q @
 
 " inoremap ii <Esc>
 noremap <leader>t :term<CR>
@@ -132,8 +135,6 @@ colorscheme wal
 " PLUGINS ---------------------------------------------------------------------------------- {{{
 Plugin 'sheerun/vim-polyglot'						" Syntax highlighting plugin
 
-Plugin 'Xe/lolcode.vim'								" Syntax highlighting for Lolcode
-
 Plugin 'jiangmiao/auto-pairs'						" Automatic pairs or bracets, quotes, etc.
 let g:AutoPairsShortcutToggle = '<C-P>'				" Set Ctrl+P to toggle
 
@@ -141,15 +142,8 @@ Plugin 'preservim/nerdtree'							" File tree plugin
 let NERDTreeShowHidden=1							" Show hidden files in tree
 " autocmd VimEnter * NERDTree | wincmd p				" Open NERDTree when opening Vim, close Vim if only Nerdtree is open
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-													" Use :NERDTree to open the file tree
-" autocmd VimEnter * NERDTreeToggle
 
 " Plugin 'ryanoasis/vim-devicons'						" Makes NERDTree show icons
-set encoding=UTF-8
-
-" Plugin 'vim-airline/vim-airline'					" Status line
-
-"Plugin 'powerline/powerline'
 
 Plugin 'yggdroot/indentline'						" Shows indentation levels
 
@@ -161,102 +155,21 @@ Plugin 'severin-lemaignan/vim-minimap'				" Code minimap
 
 Plugin 'francoiscabrol/ranger.vim'					" Open Ranger with :Ranger
 
-" Plugin 'mhinz/vim-startify'
-
 Plugin 'lilydjwg/colorizer'							" Colorizer plugin
 
-" Plugin 'tpope/vim-fugitive'							" Git wrapper
+Plugin 'tpope/vim-fugitive'							" Git wrapper
 
 Plugin 'airblade/vim-gitgutter'						" Shows changes between local and remote
 
 Plugin 'preservim/nerdcommenter'					" Allows easy commenting of code
 
-Plugin 'ervandew/supertab'							" Tab complete
+" Zen Mode Package
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+noremap <leader>z :Goyo<CR>
 " }}}
-
-" AIRLINE ---------------------------------------------------------------------------------- {{{
-"let g:airline_powerline_fonts=1
-"
-"if !exists('g:airline_symbols')
-	"let g:airline_symbols = {}
-"endif
-
-"let g:airline_left_sep = ''
-"let g:airline_right_sep = ''
-"let g:airline_left_alt_sep = ''
-"let g:airline_right_alt_sep = ''
-"let g:airline_symbols.maxlinenr = ''
-
-"let g:airline#extensions#tabline#enabled = 1
-" }}}
-
-" STARTIFY --------------------------------------------------------------------------------- {{{
-let g:startify_custom_header = [
-	\'          _',
-	\'   __   _(_)_ _ ____',
-	\'   \ \ / / | `_`  _  \',
-	\'    \ V /| | | | | | |',
-	\'     \_/ |_|_| |_| |_|',
-	\'',
-	\ ]
-
-let g:startify_list_order = [
-    \ ['       Most recently used files in '. getcwd() .':'],
-    \ 'dir',
-    \ ['       Most recently used files:'],
-    \ 'files',
-    \ ['       Sessions:'],
-    \ 'sessions',
-    \ ['       Bookmarks:'],
-    \ 'bookmarks',
-    \ ]
-let g:startify_bookmarks = [ {'v': '~/.vim/vimrc'}, {'s': '~/.config/fish/config.fish'}, {'w': '~/.config/i3/config'}, {'t': '~/.config/alacritty/alacritty.yml'}, {'c': '~/.config/picom.conf'}, {'n': '~/.config/neofetch/config.conf'} ]
-let g:startify_files_number = 5
-" }}}
-
-
-fun! Start()
-    " Don't run if: we have commandline arguments, we don't have an empty
-    " buffer, if we've not invoked as vim or gvim, or if we'e start in insert mode
-    if argc() || line2byte('$') != -1 || v:progname !~? '^[-gmnq]\=vim\=x\=\%[\.exe]$' || &insertmode
-        return
-    endif
-    " Start a new buffer ...
-    enew
-    " ... and set some options for it
-    setlocal
-        \ bufhidden=wipe
-        \ buftype=nofile
-        \ nobuflisted
-        \ nocursorcolumn
-        \ nocursorline
-        \ nolist
-        \ nonumber
-        \ noswapfile
-        \ norelativenumber
-    " Now we can just write to the buffer, whatever you want.
-    call append('$', "")
-    let motd = [
-        \'  Hello, Ben.',
-        \'Welcome to Vim.',
-        \ ]
-    let maxline=max(map(copy(motd), 'len(v:val)'))
-    let space=repeat(' ', (winwidth(0) - maxline)/2)
-    call append('$', map(motd, 'space . v:val'))
-    let leading=repeat([''], (winheight(0)-len(getline(0, '$')))/2)
-    call append('^', leading)
-    execute ":0"
-    " No modifications to this buffer
-    setlocal nomodifiable nomodified
-    " When we go to insert mode start a new buffer, and start insert
-    nnoremap <buffer><silent> e :enew<CR>
-    nnoremap <buffer><silent> i :enew <bar> startinsert<CR>
-    nnoremap <buffer><silent> o :enew <bar> startinsert<CR>
-endfun
-
-" Run after "doing all the startup stuff"
-autocmd VimEnter * call Start()
-
 
 " RANGER ----------------------------------------------------------------------------------- {{{
 let g:ranger_map_keys = 0
