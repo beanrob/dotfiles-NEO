@@ -67,12 +67,18 @@ set backspace=indent,eol,start
 set softtabstop=4
 
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+autocmd BufNewFile,BufRead *.md set tw=80
+autocmd BufNewFile,BufRead *.cal source ~/.vim/cal.vim
+
+" List
 " set list
 " set listchars=
 " set listchars+=tab:·\
 " set listchars+=trail:·
 " set listchars+=extends:»
 " set listchars+=precedes:«
+
+set showtabline=2
 " }}}
 
 " KEYBINDINGS ------------------------------------------------------------------------------ {{{
@@ -92,8 +98,16 @@ noremap <leader>fm :Ranger<CR>
 noremap <leader>ft :NERDTreeToggle<CR>
 let NERDTreeMinimalUI=1
 
+noremap j gj
+noremap k gk
+
 noremap <C-e> $
 noremap <C-a> ^
+
+noremap <C-t>c :tabnew<CR>
+noremap <C-t>x :tabclose<CR>
+noremap <C-t>n :tabnext<CR>
+noremap <C-t>p :tabprevious<CR>
 
 " tnoremap <Esc> <C-\><C-n>:q!<CR>
 
@@ -166,8 +180,8 @@ Plugin 'preservim/nerdcommenter'					" Allows easy commenting of code
 " Zen Mode Package
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
 noremap <leader>z :Goyo<CR>
 " }}}
 
