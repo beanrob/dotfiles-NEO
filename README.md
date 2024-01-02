@@ -24,7 +24,6 @@ vim +PluginInstall +qall
 # Uninstall vim module:
 stow -D vim
 ```
-
 ## Modules & Packages
 
 ### Single Package Modules
@@ -37,16 +36,20 @@ stow -D vim
     - i3wm
     - i3bar
     - i3status
-    - pywal
 - mpd
     - mpd
     - ncmpcpp
     - mpDris2
     - mpdscribble
+- misc
+    - neofetch
+    - picom
+    - redshift
+    - pywal
+    - dunst
 
 ### Standalone Modules
 - bin
-- misc
 
 ## Disclaimer
 You can use and fork this repo as you want, but I take no responsibility for
