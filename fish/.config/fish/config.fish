@@ -88,8 +88,8 @@ alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
 alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
 
 # Replace base commands with exa
-alias ls="exa -lh --icons --no-permissions"
-alias ld="exa -lhD --icons --no-permissions"
+alias ls="exa -h --icons --no-permissions"
+alias ld="exa -hD --icons --no-permissions"
 # alias tree=exa -a --icons --tree		# Shows hidden files
 alias tree="exa --icons --tree"			# Doesn't show hidden files
 
