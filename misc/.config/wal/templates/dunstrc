@@ -171,7 +171,7 @@
     max_icon_size = 100
 
     # Paths to default icons.
-    icon_path="/usr/share/icons/ePapirus-Dark/48x48@2x/apps:/usr/share/icons/ePapirus-Dark/48x48@2x/categories:/usr/share/icons/ePapirus-Dark/48x48@2x/devices:/usr/share/icons/ePapirus-Dark/48x48@2x/places:/usr/share/icons/ePapirus-Dark/48x48@2x/mimetypes:/usr/share/icons/ePapirus-Dark/48x48@2x/status:/usr/share/icons/ePapirus-Dark/48x48@2x/emotes:/usr/share/icons/ePapirus-Dark/48x48@2x/actions:/usr/share/icons/ePapirus-Dark/48x48@2x/emblems"
+    icon_path="/usr/share/icons/Papirus-Dark/48x48@2x/apps:/usr/share/icons/Papirus-Dark/48x48@2x/categories:/usr/share/icons/Papirus-Dark/48x48@2x/devices:/usr/share/icons/Papirus-Dark/48x48@2x/places:/usr/share/icons/Papirus-Dark/48x48@2x/mimetypes:/usr/share/icons/Papirus-Dark/48x48@2x/status:/usr/share/icons/Papirus-Dark/48x48@2x/emotes:/usr/share/icons/Papirus-Dark/48x48@2x/actions:/usr/share/icons/Papirus-Dark/48x48@2x/emblems"
 
     ### History ###
 
@@ -271,7 +271,7 @@
     foreground = "{foreground}"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    default_icon = /usr/share/icons/ePapirus-Dark/48x48@2x/status/messagebox_info.svg
+    default_icon = /usr/share/icons/Papirus-Dark/48x48@2x/status/messagebox_info.svg
 
 [urgency_normal]
     background = "{background}"
