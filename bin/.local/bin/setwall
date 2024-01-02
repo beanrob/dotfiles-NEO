@@ -9,7 +9,7 @@ else
 fi
 
 # Set wallpaper using pywal
-if [ "$3" = "-w" ]; then
+if [ "$2" = "-w" ]; then
     feh --bg-fill "$wallpaper"
     echo "~/$walldir/$1" > ~/.cache/wal/wal
 else

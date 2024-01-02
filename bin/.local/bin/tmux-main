@@ -1,6 +1,6 @@
 #!/bin/sh
 if [ "$(tmux ls | grep main)" != "main" ]
 then
-  tmux new-session -d -s main "beanstat && fish" && tmux new-window -t main -n music ncmpcpp && tmux new-window -t main -n mail mutt && tmux new-window -t main -n rss newsboat;
+  tmux new-session -d -s main "beanstat && fish" && tmux new-window -t main -n music ncmpcpp && tmux new-window -t main -n mail mutt && tmux new-window -t main -n feed newsboat;
 fi
 tmux attach

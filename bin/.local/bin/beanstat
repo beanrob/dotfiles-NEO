@@ -55,7 +55,7 @@ for file in ./*; do
             echo -e "${NEW}Last backed up ${BOLD}today ${RESET}"
         elif [ $daydiff = 1 ]; then
             echo -e "${NEW}Last backed up ${BOLD}yesterday ${RESET}"
-        elif [ $daydiff -gt 7 ]; then
+        elif [ $daydiff -gt 6 ]; then
             echo -e "${OLD}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
         else
             echo -e "${NEW}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
