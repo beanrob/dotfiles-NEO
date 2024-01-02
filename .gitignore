@@ -11,3 +11,9 @@ mpd/.config/mpdscribble/log
 
 # fish
 fish/.config/fish/fish_variables
+
+# newsboat
+newsboat/.newsboat/cache.db
+newsboat/.newsboat/cache.db.lock
+newsboat/.newsboat/history.cmdline
+newsboat/.newsboat/history.search
