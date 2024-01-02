@@ -1,0 +1,21 @@
+import = ["/home/bean/.cache/wal/alacritty.toml"]
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 8
+# transparent_background_colors = false
+
+[font.normal]
+family = "scientifica"
+
+[window]
+opacity = 1
+
+[window.padding]
+x = 24
+y = 24
+
+[debug]
+log_level = "Off"
