@@ -81,6 +81,7 @@ bindsym $mod+Control+Return exec $TERM --class tmux -e tmux-main
 
 # kill focused window
 bindsym $mod+q kill
+bindsym F12 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id ~/.scripts/misc/dmenu.sh
@@ -265,8 +266,9 @@ for_window [class="discord"] border pixel 0
 # Assigned Workspaces
 assign [class="firefox"] → home
 assign [class="tmux"]    → home
-assign [class="discord"] → disc
+assign [class="steam"]   → misc
 assign [class="Spotify"] → musi
+assign [class="discord"] → disc
 
 # Autostart programs
 exec --no-startup-id discord
