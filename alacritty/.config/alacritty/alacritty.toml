@@ -9,9 +9,11 @@ size = 8
 
 [font.normal]
 family = "scientifica"
+# family = "monospace"
 
 [window]
 opacity = 1
+#dynamic_padding = true
 
 [window.padding]
 x = 24
@@ -19,3 +21,6 @@ y = 24
 
 [debug]
 log_level = "Off"
+
+[keyboard]
+bindings = []
