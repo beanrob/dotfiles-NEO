@@ -1,18 +1,22 @@
 https://shonenjumpplus.com/rss/series/4855956445112463398 "manga" "~Fire Emblem Engage Manga"
 
 https://vkc.sh/feed/ "tech"
-log.pyratebeard.net/rss.xml "tech" "~PyrateBeard"
+https://log.pyratebeard.net/rss.xml "tech" "~PyrateBeard"
+https://andreaborman2.blogspot.com/feeds/posts/default?alt=rss "tech"
+https://deltasdnd.blogspot.com/feeds/posts/default?alt=rss "games" "dnd"
 
 https://rss.spacehey.com/blog_user?id=1159042 "chums"
 
 https://playstarbound.com/feed/ "games" "starbound"
 
 "query:Unwatched Videos:(tags # \"youtube\") and (unread = \"yes\")"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsQnAt5I56M-qx4OgCoVmeA "youtube" "hearthstone" "games"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ "youtube" "tech"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A "youtube"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCY8rD_PJ_nvYLaBGGeVQh2g "youtube" "games" "minecraft"
+# https://www.youtube.com/feeds/videos.xml?channel_id=UCY8rD_PJ_nvYLaBGGeVQh2g "youtube" "games" "minecraft"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCdImtrRS4UewEbPdnF8R4qw "youtube" "games" "terraria"
 # https://www.youtube.com/feeds/videos.xml?channel_id=UCld68syR8Wi-GY_n4CaoJGA "youtube" "tech"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCiUHGAbtjCrLO3ZPrTfle3Q "youtube" "games" "league"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJsinEiaDqEn8a-GcADVEVA "youtube" "games" "league"
 https://www.youtube.com/feeds/videos.xml?channel_id=UChFur_NwVSbUozOcF_F2kMg "youtube" "games" "minecraft"
 # https://www.youtube.com/feeds/videos.xml?channel_id=UCAvcnH_qnVnAvMkRP0czfKw "youtube" "games" "town of salem"
