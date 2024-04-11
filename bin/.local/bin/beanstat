@@ -11,6 +11,7 @@ BOLD='\033[1m'
 # Backup
 # Weather
 
+echo ""
 figlet -f smslant.flf beanstat | head -n -1 | lolcat -F 0.5
 #        __                     __       __
 #       / /  ___ ___ ____  ___ / /____ _/ /_
@@ -55,7 +56,7 @@ for file in ./*; do
             echo -e "${NEW}Last backed up ${BOLD}today ${RESET}"
         elif [ $daydiff = 1 ]; then
             echo -e "${NEW}Last backed up ${BOLD}yesterday ${RESET}"
-        elif [ $daydiff -gt 6 ]; then
+        elif [ $daydiff -gt 29 ]; then
             echo -e "${OLD}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
         else
             echo -e "${NEW}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
