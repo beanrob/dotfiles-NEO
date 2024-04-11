@@ -87,7 +87,7 @@ bindsym F12 kill
 bindsym $mod+space exec --no-startup-id ~/.scripts/misc/dmenu.sh
 
 bindsym $mod+e      exec --no-startup-id rofimoji
-bindsym $mod+c      exec --no-startup-id dunstctl close-all
+bindsym $mod+x      exec --no-startup-id dunstctl close-all
 bindsym $mod+z      exec --no-startup-id musicmenu
 bindsym $mod+w      exec --no-startup-id wifimenu
 bindsym $mod+v      exec --no-startup-id qrpaste
@@ -96,6 +96,7 @@ bindsym $mod+p      exec --no-startup-id screenmenu
 # bindsym $mod+Mod1+c exec --no-startup-id farge --notify
 bindsym $mod+m      exec --no-startup-id $MUSICPLAYER
 bindsym $mod+b      exec --no-startup-id $BROWSER
+bindsym $mod+g      exec --no-startup-id gimp
 bindsym $mod+d      exec --no-startup-id discord
 
 # change focus
@@ -190,7 +191,7 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -218,6 +219,17 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+mode "connect" {
+    bindsym b exec "tmux new-window -t main -n beanrob ssh beanrob"; mode "default"
+    bindsym s exec "tmux new-window -t main -n scrungle ssh scrungle"; mode "default"
+
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+c mode "connect"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -251,7 +263,7 @@ client.placeholder      $bg     $bg     $bg     $bg       $bg
 client.background       $fg
 
 gaps inner 24
-# gaps outer  0
+gaps outer 12
 
 # Always floating windows
 for_window [class="term"]       floating enable
