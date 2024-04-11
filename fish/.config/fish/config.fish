@@ -9,7 +9,7 @@
 # FISH FUNCTIONS -------------------------------------------------------------------------- {{{
 function fish_prompt
 	# echo -e (set_color blue)"["(set_color green)$USER(set_color white)"@"(set_color green)$HOSTNAME(set_color white)":"(set_color green)(prompt_pwd)(set_color blue)"] \$ "
-	echo -e "[$USER@$HOSTNAME:$(pwd)] \$ "
+	echo -e "[$USER@$HOSTNAME:$(prompt_pwd)] \$ "
 end
 
 function fish_right_prompt
@@ -29,7 +29,7 @@ end
 # }}}
 
 # VARIABLES ------------------------------------------------------------------------------- {{{
-export HOSTNAME="thonkbook"
+export HOSTNAME="thonkbook-neo"
 
 export XDG_DATA_HOME=$HOME/.local/share
 export XDG_CONFIG_HOME=$HOME/.config
