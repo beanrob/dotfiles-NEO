@@ -1,0 +1,14 @@
+# From https://github.com/maximbaz/dotfiles/blob/master/etc/pacman.d/hooks/dash-as-sh.hook
+# Should be placed in /etc/pacman.d/hooks/
+
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = bash
+
+[Action]
+Description = Configuring /bin/sh -> /bin/dash
+When = PostTransaction
+Exec = /usr/bin/ln -sfT dash /usr/bin/sh
+Depends = dash
