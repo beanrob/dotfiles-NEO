@@ -1,5 +1,7 @@
-#!/bin/sh Compositor
-picom --experimental-backend -b &
+#!/bin/sh
+
+# Compositor
+# picom -b &
 
 # Notification daemon
 dunst &
@@ -15,9 +17,17 @@ nm-applet &
 mpDris2 &
 mpdscribble -D --conf ~/.config/mpdscribble/mpdscribble.conf &
 
+# Setup screen layout
+# screenmenu monitor &
 screenmenu both &
 # screenmenu both --left &
+
+# Battery notification script
 battery-notify &
 
+# Keyboard layour
+setxkbmap -layout us -option caps:escape &
+
+# Restore wallpaper and load colours
 ~/.fehbg &
 xrdb ~/.xresources
