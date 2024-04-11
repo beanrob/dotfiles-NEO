@@ -28,10 +28,14 @@ main_window_color = "default"
 
 # PROGRESS BAR
 # ---
-progressbar_look = "━━━"
-# progressbar_look = "▃▃▃"
-progressbar_elapsed_color = "white"
-progressbar_color = "black"
+progressbar_look = "▆▆▆"
+progressbar_elapsed_color = "8_4"
+progressbar_color = "8_8"
+
+
+# progressbar_look = "▂▂▂"
+# progressbar_elapsed_color = "4_8"
+# progressbar_color = "1_8"
 
 # UI VISIBILITY
 # ---
@@ -42,7 +46,7 @@ enable_window_title = "no"
 
 # COLORS
 # ---
-# statusbar_color = "blue"
+statusbar_color = "1_8"
 color1 = "white"
 color2 = "blue"
 
@@ -67,6 +71,6 @@ current_item_suffix = "$/b"
 now_playing_prefix = "$r"
 now_playing_suffix = "$/r"
 
-song_columns_list_format = "(3f)[blue]{drE} (3f)[blue]{NE} (10){s} (0)[red]{t|fn}"
+song_columns_list_format = "(4f)[blue]{drE} (4f)[blue]{NE} (10){s} (0)[white]{t|fn}"
 song_status_format = "{%t} ({%b})"
 playlist_disable_highlight_delay = 0
