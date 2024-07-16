@@ -34,4 +34,8 @@ elif [ $1 = "gpg" ]; then
     # then do the following to import:
     # gpg --import backup.asc
 
+elif [ $1 = "mail" ]; then
+    mkdir -p "${HOME}/data/backup/mail/"
+    cp ${HOME}/sent ${HOME}/data/backup/mail/${datetime}
+
 fi

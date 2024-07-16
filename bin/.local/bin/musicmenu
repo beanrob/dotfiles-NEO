@@ -25,7 +25,7 @@ next="   next track"
 selected_option=$(echo "$playpause
 $what
 $prev
-$next" | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15")
+$next" | dmenu -h 23 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15")
 
 # Do something based on selected option
 if [ "$selected_option" = "$prev" ]

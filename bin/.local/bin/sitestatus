@@ -23,7 +23,7 @@ done
 
 for site in "${sites[@]}"
 do
-    status=$(ping -c 1 $site > /dev/null; echo $?)
+    status=$(ping -c 1 -W 0.1 $site > /dev/null; echo $?)
     length=$(echo "$site" | wc -m)
     lendiff=$(($longest-$length+1))
     if [ $1 = "beanstat" ]; then

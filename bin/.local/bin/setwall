@@ -14,17 +14,11 @@ if [ "$2" = "-w" ]; then
     echo "~/$walldir/$1" > ~/.cache/wal/wal
 else
     wal -i "$wallpaper"
+    sleep 0.5s
+    if [ $(echo "$1" | grep "tiling") != "" ]; then
+        feh --bg-tile "$wallpaper"
+    fi
 fi
 
-# Most of the below need to wait a bit for the wal cache to generate
-sleep 0.5s
-
-# qtile cmd-obj -o cmd -f restart
-wal-steam
-cp ~/.cache/wal/betterlockscreenrc ~/.config/betterlockscreenrc
-cp ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
-~/.scripts/theming/update-gtkrc.py
-~/.scripts/theming/lockscreen.py
+# ln -s ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
 xrdb ~/.xresources
-pywal-discord
-# betterlockscreen -u "$wallpaper"
