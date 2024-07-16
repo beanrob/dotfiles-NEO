@@ -1,0 +1,19 @@
+IMAPSTORE beanrob-remote
+Host bruno.scrungle.online
+Port 993
+User bean@beanrob.com
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore beanrob-local
+Path ~/data/mail/beanrob/
+Inbox ~/data/mail/beanrob/INBOX
+Subfolders Verbatim
+
+Channel bean
+Far :beanrob-remote:
+Near :beanrob-local:
+Create Both
+Expunge Both
+Patterns *
+SyncState *
