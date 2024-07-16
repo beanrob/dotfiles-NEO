@@ -1,15 +1,19 @@
-https://shonenjumpplus.com/rss/series/4855956445112463398 "manga" "~Fire Emblem Engage Manga"
+https://shonenjumpplus.com/rss/series/4855956445112463398 "manga/comics" "~Fire Emblem Engage Manga"
+https://www.novaecomic.com/comic/rss "manga/comics"
 
 https://vkc.sh/feed/ "tech"
 https://log.pyratebeard.net/rss.xml "tech" "~PyrateBeard"
 https://andreaborman2.blogspot.com/feeds/posts/default?alt=rss "tech"
-https://deltasdnd.blogspot.com/feeds/posts/default?alt=rss "games" "dnd"
+https://groups.google.com/group/vim_announce/feeds "tech"
+https://deltasdnd.blogspot.com/feeds/posts/default?alt=rss "games" "dnd" "~Delta's D&D Hotspot"
 
 https://rss.spacehey.com/blog_user?id=1159042 "chums"
+https://beanrob.com/log/feed.xml "chums"
 
 https://playstarbound.com/feed/ "games" "starbound"
 
 "query:Unwatched Videos:(tags # \"youtube\") and (unread = \"yes\")"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3bUhEPxAv6U-5f1rnXI7sw "youtube"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsQnAt5I56M-qx4OgCoVmeA "youtube" "hearthstone" "games"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ "youtube" "tech"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCBa659QWEk1AI4Tg--mrJ2A "youtube"
