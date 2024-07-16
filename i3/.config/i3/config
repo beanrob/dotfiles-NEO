@@ -81,7 +81,6 @@ bindsym $mod+Control+Return exec $TERM --class tmux -e tmux-main
 
 # kill focused window
 bindsym $mod+q kill
-bindsym F12 kill
 
 # start dmenu (a program launcher)
 bindsym $mod+space exec --no-startup-id ~/.scripts/misc/dmenu.sh
@@ -117,23 +116,24 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
+# move focused window
+bindsym $mod+Mod1+h move workspace to output left
+bindsym $mod+Mod1+j move workspace to output down
+bindsym $mod+Mod1+k move workspace to output up
+bindsym $mod+Mod1+l move workspace to output right
+
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+Control+Shift+h split h
-
-# split in vertical orientation
-bindsym $mod+Control+Shift+v split v
-
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+comma layout toggle split
+bindsym $mod+Shift+comma split toggle
 bindsym $mod+period layout stacking
 bindsym $mod+slash layout tabbed
 
@@ -284,10 +284,13 @@ assign [class="discord"] → disc
 
 # Autostart programs
 exec --no-startup-id discord
-exec --no-startup-id firefox
+exec --no-startup-id obsidiant
+exec --no-startup-id $BROWSER
 exec --no-startup-id $TERM --class tmux -e tmux-main
 
-default_floating_border normal 0
-default_border normal 0
+#default_floating_border normal 0
+#default_border          normal 0
+default_floating_border pixel 0
+default_border          pixel 0
 
 mouse_warping output
