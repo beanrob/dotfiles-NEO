@@ -11,6 +11,8 @@ export SSH_AUTH_SOCK
 #SSH agent
 eval $(ssh-agent -s)
 
+# exec jwm
+# exec fvwm
 exec i3
 
 # WINDOW MANAGER GRAVEYARD -------------
