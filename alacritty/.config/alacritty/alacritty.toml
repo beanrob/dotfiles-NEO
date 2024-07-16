@@ -9,13 +9,16 @@ size = 8
 
 [font.normal]
 family = "scientifica"
-# family = "monospace"
+#family = "monospace"
+#family = "trigon15x8"
 
 [window]
 opacity = 1
 #dynamic_padding = true
 
 [window.padding]
+#x = 0
+#y = 0
 x = 24
 y = 24
 
