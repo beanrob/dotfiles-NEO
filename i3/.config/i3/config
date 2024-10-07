@@ -93,7 +93,6 @@ bindsym $mod+v      exec --no-startup-id qrpaste
 bindsym $mod+s      exec --no-startup-id keybswap
 bindsym $mod+p      exec --no-startup-id screenmenu
 # bindsym $mod+Mod1+c exec --no-startup-id farge --notify
-bindsym $mod+m      exec --no-startup-id $MUSICPLAYER
 bindsym $mod+b      exec --no-startup-id $BROWSER
 bindsym $mod+g      exec --no-startup-id gimp
 bindsym $mod+d      exec --no-startup-id discord
@@ -139,6 +138,8 @@ bindsym $mod+slash layout tabbed
 
 # toggle tiling / floating
 bindsym $mod+Control+space floating toggle
+
+bindsym $mod+m move position center
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+space focus mode_toggle
@@ -223,6 +224,8 @@ bindsym $mod+r mode "resize"
 mode "connect" {
     bindsym b exec "tmux new-window -t main -n beanrob ssh beanrob"; mode "default"
     bindsym s exec "tmux new-window -t main -n scrungle ssh scrungle"; mode "default"
+    bindsym h exec "tmux new-window -t main -n bruno ssh bruno"; mode "default"
+    bindsym u exec "tmux new-window -t main -n dcs ssh dcs"; mode "default"
 
     # back to normal: Enter or Escape or $mod+r
     bindsym Return mode "default"
