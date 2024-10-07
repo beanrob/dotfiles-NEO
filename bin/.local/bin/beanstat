@@ -25,9 +25,9 @@ unread=$(ls ~/data/mail/beanrob/INBOX/new/ | wc -l)
 if [ $unread = 1 ]; then
     echo "│  $unread unread email"
 elif [ $unread = 0 ]; then
-    echo "│  No unread emails"
+    echo "│  No unread emails!"
 else
-    echo "│  $unread unread emails"
+    echo "│  $unread unread emails."
 fi
 
 echo "│"
@@ -66,13 +66,13 @@ for file in ./*; do
         printf "│  $name""%-""$lendiff""s"
 
         if [ $daydiff = 0 ]; then
-            echo -e "${NEW}Last backed up ${BOLD}today ${RESET}"
+            echo -e "${NEW}Last backed up ${BOLD}today. ${RESET}"
         elif [ $daydiff = 1 ]; then
-            echo -e "${NEW}Last backed up ${BOLD}yesterday ${RESET}"
+            echo -e "${NEW}Last backed up ${BOLD}yesterday. ${RESET}"
         elif [ $daydiff -gt 29 ]; then
-            echo -e "${OLD}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
+            echo -e "${OLD}Last backed up ${BOLD}${daydiff} days ago. ${RESET}"
         else
-            echo -e "${NEW}Last backed up ${BOLD}${daydiff} days ago ${RESET}"
+            echo -e "${NEW}Last backed up ${BOLD}${daydiff} days ago. ${RESET}"
         fi
     fi
 done
@@ -94,9 +94,9 @@ if [ $internet = "0"  ]; then
     echo -e "├─ ${BOLD}UPDATES${RESET}"
     amount=$(checkupdates | wc -l)
     if [ $amount = 0 ]; then
-        echo -e "│  ${BOLD}All up to date${RESET}!"
+        echo -e "│  ${BOLD}All is up to date${RESET}!"
     else
-        echo -e "│  ${BOLD}${amount}${RESET} packages need updating"
+        echo -e "│  ${BOLD}${amount}${RESET} packages need updating."
     fi
     echo "│"
 
