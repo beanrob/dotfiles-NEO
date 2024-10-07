@@ -162,6 +162,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 " Shows indentation levels
 Plugin 'yggdroot/indentline'
+let g:indentLine_setConceal = 0
 
 " Makes filetree look cooler
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
