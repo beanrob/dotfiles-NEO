@@ -6,3 +6,12 @@ bind-key j down
 bind-key k up
 bind-key h quit
 bind-key l open
+
+auto-reload yes
+max-items 100
+
+feedlist-format "%?T? %n %8u %t &%t?"
+
+color info             black blue bold
+color listfocus        black blue bold
+color listfocus_unread white blue bold
