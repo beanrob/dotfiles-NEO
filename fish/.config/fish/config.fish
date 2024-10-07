@@ -8,7 +8,6 @@
 
 # FISH FUNCTIONS -------------------------------------------------------------------------- {{{
 function fish_prompt
-	# echo -e (set_color blue)"["(set_color green)$USER(set_color white)"@"(set_color green)$HOSTNAME(set_color white)":"(set_color green)(prompt_pwd)(set_color blue)"] \$ "
 	echo -e "[$USER@$HOSTNAME:$(prompt_pwd)] \$ "
 end
 
@@ -19,6 +18,7 @@ end
 function fish_greeting
 end
 
+# for when you forget to type sudo
 function sudo
     if test "$argv" = !!
         eval command sudo $history[1]
@@ -64,26 +64,25 @@ fish_config theme choose "fish default"
 # }}}
 
 # ALIASES & APPLICATIONS ------------------------------------------------------------------ {{{
-#applications
-alias top="gtop"
+# Applications
+alias top="htop"
 alias fm="ranger"
 export TERM="alacritty"
 export MUSICPLAYER="$TERM -e ncmpcpp"
-# export MUSICPLAYER="spotify"
 export BROWSER="firefox"
 export EDITOR=vim
 export VISUAL=vim
 
 alias x="startx"
 
-# pacman
+# Pacman
 alias pac-update="yay -Syu"
 alias pac-count="yay -Q | wc -l"
 alias pac-autoremove="yay -Qdtq | yay -Rs -"
 alias pac-clear="yay -Scc"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
-# output security codes
+# Output security codes
 alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
 alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
 
@@ -99,14 +98,9 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias ln="ln -i"
 
-
-#clock & stopwatch
-alias clock="tty-clock -sc"
-alias stopwatch="tty-stopwatch -scD"
-alias catclock="xclock"
-
-#misc
+# Misc
 alias catsay="cowsay -f cat-peekaboo"
+alias drag="dragon-drop"
 # }}}
 
 # AUTO START X ---------------------------------------------------------------------------- {{{
