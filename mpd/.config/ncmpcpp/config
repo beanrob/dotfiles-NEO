@@ -14,9 +14,9 @@ mouse_list_scroll_whole_page = "yes"
 lines_scrolled = "1"
 message_delay_time = "1"
 playlist_shorten_total_times = "yes"
-playlist_display_mode = "columns"
-browser_display_mode = "columns"
-search_engine_display_mode = "columns"
+playlist_display_mode        = "columns"
+browser_display_mode         = "columns"
+search_engine_display_mode   = "columns"
 playlist_editor_display_mode = "columns"
 autocenter_mode = "yes"
 centered_cursor = "yes"
@@ -55,13 +55,13 @@ color2 = "blue"
 
 # Visualiser panel
 startup_screen = "playlist"
-startup_slave_screen = "visualizer"
+startup_slave_screen = ""
 locked_screen_width_part = 50
 ask_for_locked_screen_width_part = yes
 
 visualizer_data_source = /tmp/mpd.fifo
 visualizer_output_name = "mpd_visualizer"
-visualizer_type        = "wave"
+visualizer_type        = "ellipse"
 visualizer_look       = "●●" 
 visualizer_color      = "15, 10, 5"
 visualizer_spectrum_gain = 100
