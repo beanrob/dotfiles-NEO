@@ -38,4 +38,6 @@ elif [ $1 = "mail" ]; then
     mkdir -p "${HOME}/data/backup/mail/"
     cp ${HOME}/sent ${HOME}/data/backup/mail/${datetime}
 
+elif [ $1 = "backups" ]; then
+    rsync -tavzP /home/bean/data/backups/ bean@bruno.scrungle.online:/mnt/disk2/backups/
 fi
