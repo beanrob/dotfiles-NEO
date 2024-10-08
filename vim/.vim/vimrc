@@ -195,6 +195,7 @@ noremap <leader>z :Goyo<CR>
 " LaTeX autocompile
 Plugin 'lervag/vimtex'
 let g:vimtex_view_method = 'zathura'
+let g:vimtex_version_check = 0
 " }}}
 
 let mapleader = " "
