@@ -5,4 +5,4 @@ then
   tmux new-session -d -s main "beanstat && fish" && tmux new-window -t main -n music ncmpcpp && tmux new-window -t main -n feed "newsboat -r";
   tmux select-window -t main:1
 fi
-tmux attach
+tmux attach -t main

@@ -1,0 +1,8 @@
+#!/bin/sh
+projectdir="~/docs/1\ university/year\ 3/project/"
+if [ "$(tmux ls | grep work)" != "work" ]
+then
+  tmux new-session -d -s work "fish -C 'cd ${projectdir} && git status'" && tmux new-window -t work -n editor "cd ${projectdir} && ranger"
+  tmux select-window -t work:1
+fi
+tmux attach -t work

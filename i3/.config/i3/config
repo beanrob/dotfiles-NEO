@@ -281,6 +281,7 @@ for_window [class="discord"] border pixel 0
 # Assigned Workspaces
 assign [class="firefox"] → home
 assign [class="tmux"]    → home
+assign [class="work"]    → work
 assign [class="steam"]   → misc
 assign [class="Spotify"] → musi
 assign [class="discord"] → disc
@@ -290,6 +291,7 @@ exec --no-startup-id discord
 exec --no-startup-id obsidiant
 exec --no-startup-id $BROWSER
 exec --no-startup-id $TERM --class tmux -e tmux-main
+exec --no-startup-id $TERM --class work -e tmux-work
 
 #default_floating_border normal 0
 #default_border          normal 0
