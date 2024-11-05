@@ -272,6 +272,7 @@ gaps outer 12
 for_window [class="term"]       floating enable
 for_window [class="feh"]        floating enable
 for_window [class="mpv"]        floating enable
+for_window [class="steam"]      floating enable
 for_window [class="Galculator"] floating enable
 
 # No titlebar
