@@ -148,6 +148,7 @@ colorscheme wal
 
 " PLUGINS ---------------------------------------------------------------------------------- {{{
 " Syntax highlighting plugin
+let g:polyglot_disabled = ["autoindent"]
 Plugin 'sheerun/vim-polyglot'
 
 " Automatic pairs or bracets, quotes, etc.
