@@ -245,13 +245,13 @@ bar {
     colors {
         background $bg
         statusline $fg
-        separator $color4
+        separator $color1
 
-        focused_workspace  $color4 $color4 $fg
+        focused_workspace  $color1 $color1 $fg
         active_workspace   $bg     $bg     $fg
         inactive_workspace $bg     $bg     $fg
-        urgent_workspace   $color6 $color6 $fg
-        binding_mode       $color6 $color6 $fg
+        urgent_workspace   $color2 $color2 $fg
+        binding_mode       $color2 $color22$fg
     }
     height 24
 }
@@ -260,7 +260,7 @@ bar {
 client.focused          $color1 $color1 $color1 $color1   $color1
 client.focused_inactive $bg     $bg     $bg     $bg       $bg
 client.unfocused        $bg     $bg     $bg     $bg       $bg
-client.urgent           $color6 $color6 $color6 $color6   $color6
+client.urgent           $color2 $color2 $color2 $color2   $color2
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 
 client.background       $fg
@@ -286,6 +286,8 @@ assign [class="work"]    → work
 assign [class="steam"]   → misc
 assign [class="Spotify"] → musi
 assign [class="discord"] → disc
+
+exec --no-startup-id "i3-msg 'workspace home; append_layout /home/bean/.config/i3/workspace-home.json'"
 
 # Autostart programs
 exec --no-startup-id discord
