@@ -23,25 +23,25 @@ filetype plugin indent on
 " }}}
 
 " SETTINGS --------------------------------------------------------------------------------- {{{
-set encoding=UTF-8
+set encoding=UTF-8      " Standard encoding
 set nocompatible 		" Use vim settings rather than vi
 
 set t_Co=256 			" Enable 256 colours
 set nu			        " Enable line numbers
 syntax on       	    " Enable syntax highlights
-set showmatch
+set showmatch           " Highlight matching brackets
 
 set incsearch		    " Enable incremental search (search
 						" updates as you change the query)
 set hlsearch		    " Enable searching highlighted text
-set ignorecase
-set smartcase
+set ignorecase          " Sometimes be picky about the case
+set smartcase           " of search terms
 
 set termwinsize=12x0	" Set terminal size (rows)
 set splitbelow			" Always split windows below
 set splitright			" Always split windows to the right
-set mouse=a				" Enable mouse drag on window splits
-set nowrap
+set mouse=a				" Enable mouse
+set nowrap              " Cut off lines at the edge of the screen
 
 set tabstop=4		    " How many spaces an indent is
 set shiftwidth=4
@@ -56,43 +56,29 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-"augroup dynamic_smartcase
-"    autocmd!
-"    autocmd CmdLineEnter : set nosmartcase
-"    autocmd CmdLineLeave : set smartcase
-"augroup END
-
 " Make backspace behave normally
 set backspace=indent,eol,start
 set softtabstop=4
 
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
+" In text files, wrap after 80 characters
 autocmd BufNewFile,BufRead *.md  set tw=80
 autocmd BufNewFile,BufRead *.txt set tw=80
 autocmd BufNewFile,BufRead *.tex set tw=80
 
-" List
-" set list
-" set listchars=
-" set listchars+=tab:·\
-" set listchars+=trail:·
-" set listchars+=extends:»
-" set listchars+=precedes:«
-
-set showtabline=2
+set showtabline=2       " Show tab bar at the top
 " }}}
 
 " KEYBINDINGS ------------------------------------------------------------------------------ {{{
 
+let mapleader = " "
+
 noremap U :redo<CR>
 noremap Q @
 
-" inoremap ii <Esc>
+inoremap ii <Esc>
 noremap <leader>t :term<CR>
 noremap <leader>m :MinimapToggle<CR>
-
-" noremap <leader>r :Ranger<CR>
-" noremap <leader>f :NERDTreeToggle<CR>
 
 noremap <leader>fm :Ranger<CR>
 noremap <leader>ft :NERDTreeToggle<CR>
@@ -134,10 +120,6 @@ Plugin 'morhetz/gruvbox',{'name':'gruvbox'}
 
 let g:everforest_background = 'hard'
 let g:everforest_better_performance = 1
-
-" if has('termguicolors')
-   set termguicolors
-" endif
 
 set background=dark		" Chooses background colour
 colorscheme wal
@@ -199,7 +181,6 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_version_check = 0
 " }}}
 
-let mapleader = " "
 " RANGER ----------------------------------------------------------------------------------- {{{
 let g:ranger_map_keys = 0
 " }}}
