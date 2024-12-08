@@ -39,7 +39,7 @@ then
     playerctl next
 elif [ "$selected_option" = "$what" ]
 then
-    ~/.scripts/notifications/whats-playing.sh
+    whats-playing
 else
     echo "No match"
 fi
