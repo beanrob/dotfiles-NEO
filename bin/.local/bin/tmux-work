@@ -1,5 +1,5 @@
 #!/bin/sh
-projectdir="~/docs/1\ university/year\ 3/CS344/"
+projectdir="~/docs/1\ university/3rd\ year/CS344/"
 if [ "$(tmux ls | grep work)" != "work" ]
 then
   tmux new-session -d -s work "fish -C 'cd ${projectdir} && git status'" && tmux new-window -t work -n editor "cd ${projectdir} && ranger"
