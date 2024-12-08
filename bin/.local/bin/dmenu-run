@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# dmenu_run improved
+# command ending with '!', is started in the terminal.
+test -s "$HOME"/.dmenurc && . "$HOME"/.dmenurc
+
+# Import the colors (wal)
+. "${HOME}/.cache/wal/colors.sh"
+cmd="$(dmenu_path | dmenu -h 23 -p ' ' -nb "$background" -nf "$color15" -sb "$color4" -sf "$color15" "$@")"
+
+# Import the colors (solarized)
+# . "${HOME}/.solarized.sh"
+# cmd="$(dmenu_path | dmenu -p ' ' -nb "$color8" -nf "$color12" -sb "$color3" -sf "$color10" "$@")"
+
+case $cmd in
+    *\!) "$TERM" -e "${cmd%?}" & ;;
+    *)   "${cmd}" & ;;
+esac
