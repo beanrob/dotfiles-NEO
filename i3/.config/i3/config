@@ -270,6 +270,7 @@ gaps outer 12
 
 # Always floating windows
 for_window [class="term"]       floating enable
+for_window [class="clock"]      floating enable
 for_window [class="feh"]        floating enable
 for_window [class="mpv"]        floating enable
 for_window [class="steam"]      floating enable
@@ -283,23 +284,31 @@ for_window [class="discord"] border pixel 0
 assign [class="firefox"] → home
 assign [class="tmux"]    → home
 assign [class="work"]    → work
+assign [class="clock"]   → misc
+assign [class="gimp"]    → misc
 assign [class="steam"]   → misc
 assign [class="Spotify"] → musi
 assign [class="discord"] → disc
 
 # Layout of home workspace
-exec --no-startup-id "i3-msg 'workspace home; append_layout /home/bean/.config/i3/workspace-home.json'"
 
 workspace home output DP-1 HDMI-1 eDP-1
 workspace work output DP-1 HDMI-1 eDP-1
+workspace code output DP-1 HDMI-1 eDP-1
+workspace misc output DP-1 HDMI-1 eDP-1
+workspace game output DP-1 HDMI-1 eDP-1
 workspace disc output eDP-1
 
 # Autostart programs
 exec --no-startup-id discord
-exec --no-startup-id obsidiant
+exec --no-startup-id "i3-msg 'workspace home; append_layout /home/bean/.config/i3/workspace-home.json'"
+exec --no-startup-id "i3-msg 'workspace work; append_layout /home/bean/.config/i3/workspace-work.json'"
+#exec --no-startup-id "i3-msg 'workspace misc; append_layout /home/bean/.config/i3/workspace-misc.json'"
 exec --no-startup-id $BROWSER
-exec --no-startup-id $TERM --class tmux -e tmux-main
-exec --no-startup-id $TERM --class work -e tmux-work
+exec --no-startup-id $TERM --class tmux  -e tmux-main
+exec --no-startup-id $TERM --class work  -e tmux-work
+#exec --no-startup-id $TERM --class clock -e tty-clock -sc
+exec --no-startup-id i3-msg 'workspace home'
 
 #default_floating_border normal 0
 #default_border          normal 0

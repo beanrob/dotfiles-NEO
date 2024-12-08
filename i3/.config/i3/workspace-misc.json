@@ -1,0 +1,39 @@
+// vim:ts=4:sw=4:et
+{
+    // floating_con with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splith",
+    "marks": [],
+    "percent": null,
+    "rect": {
+       "height": 600,
+       "width": 800,
+       "x": 130,
+       "y": 252
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "user_on",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "clock",
+            "percent": 1,
+            "swallows": [
+               {
+                  "class": "clock"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
