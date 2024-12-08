@@ -20,17 +20,17 @@ figlet -f smslant.flf BEANSTAT | head -n -1 | lolcat -F 0.5
 echo "┌─────────────────────────────────────"
 echo "│"
 
-echo -e "├─ ${BOLD}EMAILS${RESET}"
-unread=$(ls ~/data/mail/beanrob/INBOX/new/ | wc -l)
-if [ $unread = 1 ]; then
-    echo "│  $unread unread email"
-elif [ $unread = 0 ]; then
-    echo "│  No unread emails!"
-else
-    echo "│  $unread unread emails."
-fi
-
-echo "│"
+# echo -e "├─ ${BOLD}EMAILS${RESET}"
+# unread=$(ls ~/data/mail/beanrob/INBOX/new/ | wc -l)
+# if [ $unread = 1 ]; then
+#     echo "│  $unread unread email"
+# elif [ $unread = 0 ]; then
+#     echo "│  No unread emails!"
+# else
+#     echo "│  $unread unread emails."
+# fi
+# 
+# echo "│"
 
 echo -e "├─ ${BOLD}BACKUPS${RESET}"
 dir=$(pwd)
