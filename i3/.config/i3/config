@@ -192,7 +192,8 @@ bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Control+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q   exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -286,11 +287,9 @@ assign [class="tmux"]    → home
 assign [class="work"]    → work
 assign [class="clock"]   → misc
 assign [class="gimp"]    → misc
-assign [class="steam"]   → misc
+assign [class="steam"]   → game
 assign [class="Spotify"] → musi
 assign [class="discord"] → disc
-
-# Layout of home workspace
 
 workspace home output DP-1 HDMI-1 eDP-1
 workspace work output DP-1 HDMI-1 eDP-1
@@ -301,13 +300,17 @@ workspace disc output eDP-1
 
 # Autostart programs
 exec --no-startup-id discord
+
 exec --no-startup-id "i3-msg 'workspace home; append_layout /home/bean/.config/i3/workspace-home.json'"
-exec --no-startup-id "i3-msg 'workspace work; append_layout /home/bean/.config/i3/workspace-work.json'"
-#exec --no-startup-id "i3-msg 'workspace misc; append_layout /home/bean/.config/i3/workspace-misc.json'"
 exec --no-startup-id $BROWSER
 exec --no-startup-id $TERM --class tmux  -e tmux-main
+
+exec --no-startup-id "i3-msg 'workspace work; append_layout /home/bean/.config/i3/workspace-work.json'"
 exec --no-startup-id $TERM --class work  -e tmux-work
-#exec --no-startup-id $TERM --class clock -e tty-clock -sc
+
+exec --no-startup-id "i3-msg 'workspace misc; append_layout /home/bean/.config/i3/workspace-misc.json'"
+exec --no-startup-id $TERM --class clock -e tty-clock -scBC 1
+
 exec --no-startup-id i3-msg 'workspace home'
 
 #default_floating_border normal 0
