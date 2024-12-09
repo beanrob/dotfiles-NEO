@@ -1,8 +1,14 @@
 #!/bin/sh
 projectdir="~/docs/1\ university/3rd\ year/CS344/"
-if [ "$(tmux ls | grep work)" != "work" ]
+if [ $(date +%H) -ge 9 ]
 then
-  tmux new-session -d -s work "fish -C 'cd ${projectdir} && git status'" && tmux new-window -t work -n editor "cd ${projectdir} && ranger"
-  tmux select-window -t work:1
+    if [ $(date +%H) -lt 19 ]
+    then
+        if [ "$(tmux ls | grep work)" != "work" ]
+        then
+          tmux new-session -d -s work "fish -C 'cd ${projectdir} && git status'" && tmux new-window -t work -n editor "cd ${projectdir} && ranger"
+          tmux select-window -t work:1
+        fi
+        tmux attach -t work
+    fi
 fi
-tmux attach -t work
