@@ -82,6 +82,7 @@ noremap <leader>m :MinimapToggle<CR>
 
 noremap <leader>fm :Ranger<CR>
 noremap <leader>ft :NERDTreeToggle<CR>
+noremap <leader>vtc :VimtexCompile<CR>
 let NERDTreeMinimalUI=1
 
 noremap j gj
