@@ -24,4 +24,4 @@ format = "$icon $percentage"
 [[block]]
 block = "time"
 interval = 1
-format = "$icon $timestamp.datetime(f:'%R:%S') "
+format = "$icon $timestamp.datetime(f:'%d/%m/%y - %R:%S') "
