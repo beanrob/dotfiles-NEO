@@ -15,12 +15,9 @@ nm-applet &
 
 # Enable when using MPD
 mpDris2 &
-mpdscribble -D --conf ~/.config/mpdscribble/mpdscribble.conf &
 
 # Setup screen layout
-# screenmenu monitor &
 screenmenu both &
-# screenmenu both --left &
 
 # Battery notification script
 battery-notify &
