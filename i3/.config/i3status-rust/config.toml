@@ -1,0 +1,27 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "native"
+
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "music"
+format = "$icon  $combo"
+
+[[block]]
+block = "sound"
+format = "$icon $volume"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "battery"
+format = "$icon $percentage"
+
+[[block]]
+block = "time"
+interval = 1
+format = "$icon $timestamp.datetime(f:'%R:%S') "
