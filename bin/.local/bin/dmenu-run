@@ -6,7 +6,7 @@ test -s "$HOME"/.dmenurc && . "$HOME"/.dmenurc
 
 # Import the colors (wal)
 . "${HOME}/.cache/wal/colors.sh"
-cmd="$(dmenu_path | dmenu -h 23 -p ' ' -nb "$background" -nf "$color15" -sb "$color4" -sf "$color15" "$@")"
+cmd="$(dmenu_path | dmenu -h 24 -fn "monospace-9" -nb "$background" -nf "$color15" -sb "$color4" -sf "$color15" "$@")"
 
 # Import the colors (solarized)
 # . "${HOME}/.solarized.sh"
