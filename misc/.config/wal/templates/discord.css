@@ -11,12 +11,12 @@
   :root
   {{
   /* Things to use below, consider them as a 'easy editing tool'! */
-  --accent:      from {color1} r g b;  /* Accent color to use. (Apple Green)                                       */
-  --text:        from {foreground} r g b;  /* Text color to use. (Night)                                               */
+  --accent:      from {color1} r g b;                                     /* Accent color to use. (Apple Green)                                       */
+  --text:        from {foreground} r g b;                                 /* Text color to use. (Night)                                               */
   --dtext:       from color-mix(in srgb, {foreground}, black 20%) r g b;  /* Dark text color to use. It is used for non-active text, I believe. (Jet) */
-  --maindark:    from {background} r g b;  /* Main dark color for background. (Antique White)                          */
+  --maindark:    from {background} r g b;                                 /* Main dark color for background. (Antique White)                          */
   --altdark:     from color-mix(in srgb, {background}, black 20%) r g b;  /* Color used inside floating pages for better readibility. (Pale Dogwood)  */
-  --fnt:         gg sans      ;  /* Font to use. Default font is 'gg sans'.                                  */
+  --fnt:         monospace;                                               /* Font to use. Default font is 'gg sans'.                                  */
   /* End of section! */
 
   /* Things! */
