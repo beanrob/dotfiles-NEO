@@ -1,5 +1,3 @@
-import = ["/home/bean/.cache/wal/alacritty.toml"]
-
 [env]
 TERM = "alacritty"
 
@@ -19,11 +17,14 @@ opacity = 1
 [window.padding]
 #x = 0
 #y = 0
-x = 24
-y = 24
+x = 12
+y = 12
 
 [debug]
 log_level = "Off"
 
 [keyboard]
 bindings = []
+
+[general]
+import = ["/home/bean/.cache/wal/alacritty.toml"]
