@@ -304,7 +304,7 @@ exec --no-startup-id $TERM --class tmux  -e tmux-main
 exec --no-startup-id "i3-msg 'workspace work/; append_layout /home/bean/.config/i3/workspace-work.json'"
 exec --no-startup-id $TERM --class work  -e tmux-work
 
-exec --no-startup-id "i3-msg 'workspace musi/; append_layout /home/bean/.config/i3/workspace-misc.json'"
+exec --no-startup-id "i3-msg 'workspace musi/; append_layout /home/bean/.config/i3/workspace-musi.json'"
 exec --no-startup-id $TERM --class music -e ncmpcpp -S clock
 
 exec --no-startup-id i3-msg 'workspace home/'
