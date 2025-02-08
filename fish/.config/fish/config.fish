@@ -8,11 +8,14 @@
 
 # FISH FUNCTIONS -------------------------------------------------------------------------- {{{
 function fish_prompt
-	echo -e "[$USER@$HOSTNAME:$(prompt_pwd)] \$ "
+	#echo -e "[\e[3m$USER\e[0m@\e[3m$HOSTNAME\e[0m:\e[3m$(prompt_pwd)\e[0m] \$ "
+    echo
+    echo $(pwd)
+    echo -e "\e[3m$USER\e[0m @ \e[3m$HOSTNAME\e[0m \$ "
 end
 
 function fish_right_prompt
-	echo (set_color white)"["(date '+%H:%M:%S')"]"
+	echo -e (set_color white)"[\e[3m"(date '+%H:%M:%S')"\e[0m]"
 end
 
 function fish_greeting
@@ -100,7 +103,7 @@ alias ln="ln -i"
 
 # Misc
 alias catsay="cowsay -f cat-peekaboo"
-alias drag="dragon-drop"
+alias dnd="dragon-drop"
 # }}}
 
 # AUTO START X ---------------------------------------------------------------------------- {{{
