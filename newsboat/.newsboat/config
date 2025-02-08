@@ -1,5 +1,6 @@
 browser "xdg-open"
-notify-program notify-send
+notify-program newsboat-update
+notify-format "%d new articles found!\n%n unread articles amongst %f unread feeds."
 
 # key bindings
 bind-key j down
@@ -10,8 +11,8 @@ bind-key l open
 auto-reload yes
 max-items 100
 
-feedlist-format "%?T? %n %8u %t &%t?"
+feedlist-format "%?T?  %n %8u %t &%t?"
 
-color info             black blue bold
-color listfocus        black blue bold
-color listfocus_unread white blue bold
+color info             black yellow bold
+color listfocus        black yellow bold
+color listfocus_unread white yellow bold
