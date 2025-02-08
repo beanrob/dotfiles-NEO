@@ -64,7 +64,7 @@ set backspace=indent,eol,start
 set softtabstop=4
 
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
-" In text files, wrap after 80 characters
+" In text files, wrap after 80 characters, spellcheck, conceal
 autocmd BufNewFile,BufRead *.md  set tw=80 spell
 autocmd BufNewFile,BufRead *.txt set tw=80 spell
 autocmd BufNewFile,BufRead *.tex set tw=80 spell
@@ -175,6 +175,10 @@ Plugin 'airblade/vim-gitgutter'
 " Better comments
 Plugin 'preservim/nerdcommenter'
 
+" Rainbow brackets
+Plugin 'frazrepo/vim-rainbow'
+let g:rainbow_active = 0
+
 " Zen Mode Package
 Plugin 'junegunn/goyo.vim'
 Plugin 'junegunn/limelight.vim'
@@ -186,6 +190,9 @@ noremap <leader>z :Goyo<CR>
 Plugin 'lervag/vimtex'
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_version_check = 0
+
+" tmux integration
+Plugin 'christoomey/vim-tmux-navigator'
 " }}}
 
 " RANGER ----------------------------------------------------------------------------------- {{{
@@ -199,3 +206,8 @@ let g:NERDCompactSexyComs = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDToggleCheckAllLines = 1
 " }}}
+
+set conceallevel=2
+autocmd BufNewFile,BufRead *.md  set conceallevel=0
+autocmd BufNewFile,BufRead *.txt set conceallevel=0
+autocmd BufNewFile,BufRead *.tex set conceallevel=0
