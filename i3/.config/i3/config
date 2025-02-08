@@ -32,7 +32,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 9
+font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -91,22 +91,24 @@ bindsym $mod+w      exec --no-startup-id wifimenu
 bindsym $mod+v      exec --no-startup-id qrpaste
 bindsym $mod+s      exec --no-startup-id keybswap
 bindsym $mod+p      exec --no-startup-id screenmenu
-# bindsym $mod+Mod1+c exec --no-startup-id farge --notify
 bindsym $mod+b      exec --no-startup-id $BROWSER
 bindsym $mod+g      exec --no-startup-id gimp
 bindsym $mod+d      exec --no-startup-id discord
 
 # change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h exec --no-startup-id i3-msg focus left  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+j exec --no-startup-id i3-msg focus down  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+k exec --no-startup-id i3-msg focus up    && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+l exec --no-startup-id i3-msg focus right && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left  exec --no-startup-id i3-msg focus left  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+Down  exec --no-startup-id i3-msg focus down  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+Up    exec --no-startup-id i3-msg focus up    && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+Right exec --no-startup-id i3-msg focus right && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+
+bindsym $mod+Mod1+k exec --no-startup-id i3-msg focus parent && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+Mod1+j exec --no-startup-id i3-msg focus child  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -114,11 +116,11 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# move focused window
-bindsym $mod+Mod1+h move workspace to output left
-bindsym $mod+Mod1+j move workspace to output down
-bindsym $mod+Mod1+k move workspace to output up
-bindsym $mod+Mod1+l move workspace to output right
+# move focused workspace
+bindsym $mod+Control+h move workspace to output left
+bindsym $mod+Control+j move workspace to output down
+bindsym $mod+Control+k move workspace to output up
+bindsym $mod+Control+l move workspace to output right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -143,21 +145,15 @@ bindsym $mod+m move position center
 # change focus between tiling / floating windows
 bindsym $mod+Shift+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "home"
-set $ws2 "work"
-set $ws3 "code"
-set $ws4 "misc"
-set $ws5 "game"
-set $ws6 "musi"
-set $ws7 "disc"
+set $ws1 "home/"
+set $ws2 "work/"
+set $ws3 "code/"
+set $ws4 "misc/"
+set $ws5 "game/"
+set $ws6 "musi/"
+set $ws7 "disc/"
 # set $ws8 "8"
 # set $ws9 "9"
 # set $ws10 "10"
@@ -246,9 +242,9 @@ bar {
     colors {
         background $bg
         statusline $fg
-        separator  $color1
+        separator  $color3
 
-        focused_workspace  $color1 $color1 $fg
+        focused_workspace  $color4 $color4 $fg
         active_workspace   $bg     $bg     $fg
         inactive_workspace $bg     $bg     $fg
         urgent_workspace   $color3 $color3 $fg
@@ -258,20 +254,20 @@ bar {
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $color1 $color1 $color1 $color1   $color1
+client.focused          $color3 $color3 $color3 $color3   $color3
 client.focused_inactive $bg     $bg     $bg     $bg       $bg
 client.unfocused        $bg     $bg     $bg     $bg       $bg
-client.urgent           $color3 $color3 $color3 $color3   $color3
+client.urgent           $color4 $color4 $color4 $color4   $color4
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 
 client.background       $fg
 
-gaps inner 32
-gaps outer 16
+gaps inner 24
+gaps outer 12
 
 # Always floating windows
 for_window [class="term"]       floating enable
-for_window [class="clock"]      floating enable
+for_window [class="music"]      floating enable
 for_window [class="feh"]        floating enable
 for_window [class="mpv"]        floating enable
 for_window [class="steam"]      floating enable
@@ -282,36 +278,36 @@ for_window [class="firefox"] border pixel 0
 for_window [class="discord"] border pixel 0
 
 # Assigned Workspaces
-assign [class="firefox"] → home
-assign [class="tmux"]    → home
-assign [class="work"]    → work
-assign [class="clock"]   → misc
-assign [class="gimp"]    → misc
-assign [class="steam"]   → game
-assign [class="Spotify"] → musi
-assign [class="discord"] → disc
+assign [class="firefox"] → home/
+assign [class="tmux"]    → home/
+assign [class="work"]    → work/
+assign [class="music"]   → musi/
+assign [class="gimp"]    → misc/
+assign [class="steam"]   → game/
+assign [class="Spotify"] → musi/
+assign [class="discord"] → disc/
 
-workspace home output DP-1 HDMI-1 eDP-1
-workspace work output DP-1 HDMI-1 eDP-1
-workspace code output DP-1 HDMI-1 eDP-1
-workspace misc output DP-1 HDMI-1 eDP-1
-workspace game output DP-1 HDMI-1 eDP-1
-workspace disc output eDP-1
+workspace home/ output DP-1 HDMI-1 eDP-1
+workspace work/ output DP-1 HDMI-1 eDP-1
+workspace code/ output DP-1 HDMI-1 eDP-1
+workspace misc/ output DP-1 HDMI-1 eDP-1
+workspace game/ output DP-1 HDMI-1 eDP-1
+workspace disc/ output eDP-1
 
 # Autostart programs
 exec --no-startup-id discord
 
-exec --no-startup-id "i3-msg 'workspace home; append_layout /home/bean/.config/i3/workspace-home.json'"
+exec --no-startup-id "i3-msg 'workspace home/; append_layout /home/bean/.config/i3/workspace-home.json'"
 exec --no-startup-id $BROWSER
 exec --no-startup-id $TERM --class tmux  -e tmux-main
 
-exec --no-startup-id "i3-msg 'workspace work; append_layout /home/bean/.config/i3/workspace-work.json'"
+exec --no-startup-id "i3-msg 'workspace work/; append_layout /home/bean/.config/i3/workspace-work.json'"
 exec --no-startup-id $TERM --class work  -e tmux-work
 
-exec --no-startup-id "i3-msg 'workspace misc; append_layout /home/bean/.config/i3/workspace-misc.json'"
-exec --no-startup-id $TERM --class clock -e tty-clock -scBC 1
+exec --no-startup-id "i3-msg 'workspace musi/; append_layout /home/bean/.config/i3/workspace-misc.json'"
+exec --no-startup-id $TERM --class music -e ncmpcpp -S clock
 
-exec --no-startup-id i3-msg 'workspace home'
+exec --no-startup-id i3-msg 'workspace home/'
 
 #default_floating_border normal 0
 #default_border          normal 0
