@@ -1,9 +1,12 @@
 [user]
-	name = Bean Robinson
-    email = 123657044+beanrob@users.noreply.github.com
+	name  = beanrob
+    email = contact.beanrob@gmail.com
+	signingkey = /home/bean/.ssh/bruno.key.pub
 [core]
 	editor = vim
 [init]
 	defaultBranch = main
 [merge]
 	tool = vimdiff
+[gpg]
+	format = ssh
