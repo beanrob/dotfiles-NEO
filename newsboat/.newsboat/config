@@ -13,6 +13,6 @@ max-items 100
 
 feedlist-format "%?T?  %n %8u %t &%t?"
 
-color info             black yellow bold
-color listfocus        black yellow bold
-color listfocus_unread white yellow bold
+color info             black blue bold
+color listfocus        black blue bold
+color listfocus_unread white blue bold
