@@ -107,13 +107,15 @@ alias dnd="dragon-drop"
 # }}}
 
 # AUTO START X ---------------------------------------------------------------------------- {{{
-if test -z "$DISPLAY"
-	figlet "Welcome" | lolcat -F 0.3
-	if test "$XDG_VTNR" -eq "1"
-		echo -en "Loading X Window System..."
-		exec startx
-	else
-		echo -e "Loading Fish Shell...\n"
-	end
+if test -z "$TERMUX_VERSION"
+    if test -z "$DISPLAY"
+        figlet "Welcome" | lolcat -F 0.3
+        if test "$XDG_VTNR" -eq "1"
+            echo -en "Loading X Window System..."
+            exec startx
+        else
+            echo -e "Loading Fish Shell...\n"
+        end
+    end
 end
 # }}}
