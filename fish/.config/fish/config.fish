@@ -59,7 +59,7 @@ alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
 # }}}
 
 # PATH ------------------------------------------------------------------------------------ {{{
-set PATH $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin $GOPATH/bin
+fish_add_path $HOME/.local/bin $HOME/.cargo/bin /usr/local/sbin /usr/local/bin /usr/sbin /usr/bin /sbin /bin /usr/games /usr/local/games /snap/bin $HOME/.local/lua-language-server/bin $HOME/.local/share/gem/ruby/3.0.0/bin $GOPATH/bin
 # }}}
 
 # THEME ----------------------------------------------------------------------------------- {{{
