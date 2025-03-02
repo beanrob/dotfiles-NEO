@@ -2,7 +2,7 @@
 projectdir="~/docs/1\ university/3rd\ year/CS344/"
 if [ $(date +%H) -ge 9 ]
 then
-    if [ $(date +%H) -lt 19 ]
+    if [ $(date +%H) -lt 19 ] || [ $1 = "-f" ]
     then
         if [ "$(tmux ls | grep work)" != "work" ]
         then
