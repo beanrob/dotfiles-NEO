@@ -73,6 +73,7 @@ autocmd BufNewFile,BufRead *.tex set tw=80 spell
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 set showtabline=2       " Show tab bar at the top
+au BufRead,BufNewFile *.todo set filetype=todo
 " }}}
 
 " KEYBINDINGS ------------------------------------------------------------------------------ {{{
