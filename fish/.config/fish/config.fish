@@ -11,7 +11,11 @@ function fish_prompt
 	#echo -e "[\e[3m$USER\e[0m@\e[3m$HOSTNAME\e[0m:\e[3m$(prompt_pwd)\e[0m] \$ "
     echo
     echo $(pwd)
-    echo -e "\e[3m$USER\e[0m @ \e[3m$HOSTNAME\e[0m \$ "
+    if test -z "$TERMUX_VERSION"
+        echo -e "\e[3m$USER\e[0m @ \e[3m$HOSTNAME\e[0m \$ "
+    else
+        echo -e "\e[3mbean\e[0m @ \e[3mmober-fone\e[0m \$ "
+    end
 end
 
 function fish_right_prompt
@@ -87,11 +91,11 @@ alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d 
 alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
 alias pypicode="cat ~/docs/0\ IMPORTANT/PYPI\ TOKEN"
 
-# Replace base commands with exa
-alias ls="exa -h --icons --no-permissions"
-alias ld="exa -hD --icons --no-permissions"
-# alias tree=exa -a --icons --tree		# Shows hidden files
-alias tree="exa --icons --tree"			# Doesn't show hidden files
+# Replace base commands with eza
+alias ls="eza -h --icons --no-permissions"
+alias ld="eza -hD --icons --no-permissions"
+# alias tree=eza -a --icons --tree		# Shows hidden files
+alias tree="eza --icons --tree"			# Doesn't show hidden files
 
 # Confirm before doing the thing
 alias mv="mv -i"
