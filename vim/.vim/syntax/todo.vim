@@ -13,6 +13,7 @@ syn keyword todo     TODAY
 syn keyword tomorrow TOMORROW
 syn match   done     "DONE.*$"
 syn keyword started  STARTED
+syn keyword item     ITEM
 syn keyword deadline DEADLINE
 syn keyword idea     IDEA
 
@@ -23,4 +24,5 @@ hi def link tomorrow Constant
 hi def link started  Boolean
 hi def link done     Comment
 hi def link deadline Include
+hi def link item     Include
 hi def link idea     Special
