@@ -65,9 +65,10 @@ set softtabstop=4
 
 autocmd FileType c,cpp,java,php,js,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 " In text files, wrap after 80 characters, spellcheck, conceal
-autocmd BufNewFile,BufRead *.md  set tw=80 spell
-autocmd BufNewFile,BufRead *.txt set tw=80 spell
-autocmd BufNewFile,BufRead *.tex set tw=80 spell
+autocmd BufNewFile,BufRead *.md   set tw=80 spell
+autocmd BufNewFile,BufRead *.txt  set tw=80 spell
+autocmd BufNewFile,BufRead *.tex  set tw=80 spell
+autocmd BufNewFile,BufRead *.todo set tw=80 spell
 
 " Markdown syntax highlighting
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
