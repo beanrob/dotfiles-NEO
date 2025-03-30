@@ -1,5 +1,7 @@
 def_key "Q"
     run_external_command "song-cover"
+def_key "L"
+  show_lyrics
 
 def_key "l"
   next_column
