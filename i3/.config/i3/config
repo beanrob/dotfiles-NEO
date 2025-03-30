@@ -82,7 +82,7 @@ bindsym $mod+Control+Return exec $TERM --class tmux -e tmux-main
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+space exec --no-startup-id dmenu-run
+bindsym $mod+space exec --no-startup-id rofi -show run
 
 bindsym $mod+e      exec --no-startup-id rofimoji
 bindsym $mod+x      exec --no-startup-id dunstctl close-all

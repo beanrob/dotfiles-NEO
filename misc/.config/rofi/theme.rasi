@@ -1,0 +1,77 @@
+/**
+ * ROFI Color theme
+ * User: Qball
+ * Copyright: Dave Davenport
+ */
+
+@import "~/.cache/wal/rofi"
+
+* {
+    text-color:        @foreground;
+    font: "monospace 8";
+}
+window {
+    height:   100%;
+    width: 30em;
+    location: west;
+    anchor:   west;
+    text-color:       @foreground;
+    padding: 0;
+}
+inputbar {
+    background-color: @background;
+    text-color:       @foreground;
+}
+mainbox {
+    expand: true;
+}
+listview {
+    lines: 0;
+    padding: 0;
+}
+window {
+    spacing: 0;
+}
+element, inputbar {
+    padding: 5px;
+}
+element {
+    children: [ element-text ];
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element selected  normal {
+    background-color: @selected-normal-background;
+}
+element normal active {
+    text-color: @active-foreground;
+}
+element normal urgent {
+    text-color: @urgent-foreground;
+}
+element alternate normal {
+}
+element alternate active {
+    text-color: @alternate-active-foreground;
+}
+element alternate urgent {
+    text-color: @alternate-urgent-foreground;
+}
+element selected active {
+    background-color: @selected-active-background;
+    text-color: @selected-active-foreground;
+}
+element selected urgent {
+    background-color: @selected-urgent-background;
+    text-color: @selected-urgent-foreground;
+}
+message {
+    padding: 0;
+}
+error-message {
+    expand: true;
+    background-color: @urgent-background;
+    padding: 0em;
+}
