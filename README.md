@@ -29,27 +29,5 @@ stow -D vim
 ```
 
 ## Modules & Packages
-
-### Single Package Modules
-- alacritty
-- fish
-- vim
-
-### Multi Package Modules
-- i3
-    - i3wm
-    - i3bar
-    - i3status
-- mpd
-    - mpd
-    - ncmpcpp
-    - mpDris2
-- misc
-    - neofetch
-    - picom
-    - redshift
-    - pywal
-    - dunst
-
-### Standalone Modules
-- bin
+Use `dotbins` to check if you have the necessary packages inside `dotbins.yaml`
+to use these dotfiles.

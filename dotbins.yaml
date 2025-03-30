@@ -1,0 +1,27 @@
+tools:
+  alacritty: alacritty/alacritty
+  fish: fish-shell/fish-shell
+  vim: vim/vim
+  tmux: tmux/tmux
+  ranger: ranger/ranger
+  networkmanager: NetworkManager/NetworkManager
+
+  i3: i3/i3
+  i3status-rs: greshake/i3status-rust
+
+  mpd: MusicPlayerDaemon/MPD
+  ncmpcpp: ncmpcpp/ncmpcpp
+  mpDris2: eonpatapon/mpDris2
+
+  neofetch: dylanaraps/neofetch
+  picom: yshui/picom
+  redshift: jonls/redshift
+  pywal: dylanaraps/pywal
+  dunst: dunst-project/dunst
+
+  feh: derf/feh
+  rsync: RsyncProject/rsync
+  notify-send: GNOME/libnotify
+  playerctl: altdesktop/playerctl
+  scrot: dreamer/scrot
+  dragon-drop: mwh/dragon
