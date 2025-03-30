@@ -1,10 +1,9 @@
 #!/bin/sh
-
-cwd=$(pwd)
-cd
 file=$(date +%Y-%m-%d_%H-%M-%S.png)
-scrot -f $file
-mv $file "pics/0 screenshots/"
-notify-send "Screenshot taken." --icon=image-missing
-cd $cwd
-echo $file
+scrot -s -f $file
+mv $file "${HOME}/pics/0 screenshots/"
+if [ -e "${HOME}/pics/0 screenshots/${file}" ]
+then
+    notify-send "Screenshot taken." --icon=image-missing
+    dragon-drop "${HOME}/pics/0 screenshots/${file}"
+fi
