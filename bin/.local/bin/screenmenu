@@ -8,10 +8,9 @@ monitor="monitor"
 
 if [ "$#" = "0" ]; then
 	# Get answer from user via dmenu
-	. "${HOME}/.cache/wal/colors.sh"
 	selected_option=$(echo "$both
 $laptop
-$monitor" | dmenu -h 23 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15"
+$monitor" | rofi -dmenu"
 	)
 else
 	selected_option=$1

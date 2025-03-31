@@ -21,11 +21,10 @@ next="   next track"
 #                   -scrollbar-width "0" )
 
 # Get answer from user via rofi
-. "${HOME}/.cache/wal/colors.sh"
 selected_option=$(echo "$playpause
 $what
 $prev
-$next" | dmenu -h 23 -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15")
+$next" | rofi -dmenu -lines 4)
 
 # Do something based on selected option
 if [ "$selected_option" = "$prev" ]
