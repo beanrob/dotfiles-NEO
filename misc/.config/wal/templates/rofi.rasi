@@ -24,4 +24,5 @@
     background: {background};
     foreground: {foreground};
     border-color: @background;
+    background-alt: {color8};
 }}
