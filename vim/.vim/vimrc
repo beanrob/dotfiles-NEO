@@ -134,6 +134,12 @@ set background=dark		" Chooses background colour
 colorscheme wal
 
 " hi Normal guibg=NONE ctermbg=NONE
+augroup myTodo
+  autocmd!
+  autocmd Syntax * syntax match myTodo /\v\_.<(TODO|FIXME).*/hs=s+1 containedin=.*Comment
+augroup END
+
+highlight link myTodo Todo
 " }}}
 
 
