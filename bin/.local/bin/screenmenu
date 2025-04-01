@@ -10,7 +10,7 @@ if [ "$#" = "0" ]; then
 	# Get answer from user via dmenu
 	selected_option=$(echo "$both
 $laptop
-$monitor" | rofi -dmenu"
+$monitor" | rofi -dmenu
 	)
 else
 	selected_option=$1
