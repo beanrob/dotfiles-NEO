@@ -12,7 +12,7 @@
 }
 window {
     height:   100%;
-    width: 30em;
+    width: 20em;
     location: west;
     anchor:   west;
     text-color:       @foreground;
@@ -34,6 +34,9 @@ window {
 }
 element, inputbar {
     padding: 5px;
+}
+prompt {
+    padding: 0 5px 0 0;
 }
 element {
     children: [ element-text ];
