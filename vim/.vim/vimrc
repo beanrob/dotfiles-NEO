@@ -27,7 +27,7 @@ set encoding=UTF-8      " Standard encoding
 set nocompatible 		" Use vim settings rather than vi
 
 set t_Co=256 			" Enable 256 colours
-set nu			        " Enable line numbers
+set rnu			        " Enable line numbers
 syntax on       	    " Enable syntax highlights
 set showmatch           " Highlight matching brackets
 
