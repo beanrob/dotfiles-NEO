@@ -65,7 +65,9 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Screenshot
-bindsym Print exec --no-startup-id screenshot
+bindsym Print  exec --no-startup-id screenshot -s
+bindsym $mod+u exec --no-startup-id screenshot
+bindsym $mod+t exec --no-startup-id screenshot -s -t
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -96,25 +98,27 @@ bindsym $mod+g      exec --no-startup-id gimp
 bindsym $mod+d      exec --no-startup-id discord
 
 # change focus
-bindsym $mod+h exec --no-startup-id i3-msg focus left  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+j exec --no-startup-id i3-msg focus down  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+k exec --no-startup-id i3-msg focus up    && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+l exec --no-startup-id i3-msg focus right && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+h exec --no-startup-id i3-msg focus left  && centercursor
+bindsym $mod+j exec --no-startup-id i3-msg focus down  && centercursor
+bindsym $mod+k exec --no-startup-id i3-msg focus up    && centercursor
+bindsym $mod+l exec --no-startup-id i3-msg focus right && centercursor
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left  exec --no-startup-id i3-msg focus left  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+Down  exec --no-startup-id i3-msg focus down  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+Up    exec --no-startup-id i3-msg focus up    && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+Right exec --no-startup-id i3-msg focus right && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+Left  exec --no-startup-id i3-msg focus left  && centercursor
+bindsym $mod+Down  exec --no-startup-id i3-msg focus down  && centercursor
+bindsym $mod+Up    exec --no-startup-id i3-msg focus up    && centercursor
+bindsym $mod+Right exec --no-startup-id i3-msg focus right && centercursor
 
-bindsym $mod+Mod1+k exec --no-startup-id i3-msg focus parent && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
-bindsym $mod+Mod1+j exec --no-startup-id i3-msg focus child  && eval $(xdotool getwindowfocus getwindowgeometry --shell) && xdotool mousemove --window $(xdotool getwindowfocus) $((WIDTH/2)) $((HEIGHT/2))
+bindsym $mod+Mod1+k exec --no-startup-id i3-msg focus parent && centercursor
+bindsym $mod+Mod1+j exec --no-startup-id i3-msg focus child  && centercursor
+
+bindsym $mod+i exec --no-startup-id centercursor
 
 # move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left  10
+bindsym $mod+Shift+j move down  10
+bindsym $mod+Shift+k move up    10
+bindsym $mod+Shift+l move right 10
 
 # move focused workspace
 bindsym $mod+Control+h move workspace to output left
@@ -123,10 +127,10 @@ bindsym $mod+Control+k move workspace to output up
 bindsym $mod+Control+l move workspace to output right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left  move left  5
+bindsym $mod+Shift+Down  move down  5
+bindsym $mod+Shift+Up    move up    5
+bindsym $mod+Shift+Right move right 5
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -242,22 +246,22 @@ bar {
     colors {
         background $bg
         statusline $fg
-        separator  $color3
+        separator  $color2
 
-        focused_workspace  $color1 $color1 $fg
+        focused_workspace  $color4 $color4 $fg
         active_workspace   $bg     $bg     $fg
         inactive_workspace $bg     $bg     $fg
-        urgent_workspace   $color3 $color3 $fg
-        binding_mode       $color3 $color3 $fg
+        urgent_workspace   $color2 $color2 $fg
+        binding_mode       $color2 $color2 $fg
     }
     height 24
 }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $color3 $color3 $color3 $color3   $color3
+client.focused          $color2 $color2 $color2 $color2   $color2
 client.focused_inactive $bg     $bg     $bg     $bg       $bg
 client.unfocused        $bg     $bg     $bg     $bg       $bg
-client.urgent           $color1 $color1 $color1 $color1   $color1
+client.urgent           $color4 $color4 $color4 $color4   $color4
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 
 client.background       $fg
@@ -304,7 +308,7 @@ exec --no-startup-id $TERM --class tmux  -e tmux-main
 exec --no-startup-id "i3-msg 'workspace work/; append_layout /home/bean/.config/i3/workspace-work.json'"
 exec --no-startup-id $TERM --class work  -e tmux-work
 
-exec --no-startup-id "i3-msg 'workspace musi/; append_layout /home/bean/.config/i3/workspace-musi.json'"
+exec --no-startup-id "i3-msg 'workspace musi/; append_layout /home/bean/.config/i3/workspace-misc.json'"
 exec --no-startup-id $TERM --class music -e ncmpcpp -S clock
 
 exec --no-startup-id i3-msg 'workspace home/'
