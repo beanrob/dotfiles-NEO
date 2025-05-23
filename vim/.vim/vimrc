@@ -27,8 +27,9 @@ set encoding=UTF-8      " Standard encoding
 set nocompatible 		" Use vim settings rather than vi
 
 set t_Co=256 			" Enable 256 colours
+set nu			        " Enable line numbers
 set rnu			        " Enable line numbers
-syntax on       	    " Enable syntax highlights
+syntax enable   	    " Enable syntax highlights
 set showmatch           " Highlight matching brackets
 
 set incsearch		    " Enable incremental search (search
@@ -55,6 +56,7 @@ set spelllang=en_gb
 set nospell
 
 " Command autocompletion
+set path+=**
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
@@ -75,10 +77,15 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 set showtabline=2       " Show tab bar at the top
 au BufRead,BufNewFile *.todo set filetype=todo
+
+" Tags
+command! MakeTags !ctags -R .
+
+" Show command
+set showcmd
 " }}}
 
 " KEYBINDINGS ------------------------------------------------------------------------------ {{{
-
 let mapleader = " "
 
 noremap U :redo<CR>
@@ -99,10 +106,10 @@ noremap k gk
 noremap <C-e> $
 noremap <C-a> ^
 
-noremap <C-t>c :tabnew<CR>
-noremap <C-t>x :tabclose<CR>
-noremap <C-t>n :tabnext<CR>
-noremap <C-t>p :tabprevious<CR>
+noremap gtc :tabnew<CR>
+noremap gtx :tabclose<CR>
+noremap gtn :tabnext<CR>
+noremap gtp :tabprevious<CR>
 
 " tnoremap <Esc> <C-\><C-n>:q!<CR>
 
@@ -117,6 +124,8 @@ function! g:ToggleNuMode()
 	endif
 endfunction
 nnoremap <silent><leader>n :call g:ToggleNuMode()<CR>
+
+nnoremap ,html :-1read $HOME/.vim/templates/skeleton.html<CR>3jwf>a
 " }}}
 
 " COLOURS ---------------------------------------------------------------------------------- {{{
@@ -150,7 +159,7 @@ Plugin 'sheerun/vim-polyglot'
 
 " Automatic pairs or bracets, quotes, etc.
 Plugin 'jiangmiao/auto-pairs'
-let g:AutoPairsShortcutToggle = '<C-P>'
+let g:AutoPairsShortcutToggle = 'gp'
 
 " File tree plugin
 Plugin 'preservim/nerdtree'
