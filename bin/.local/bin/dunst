@@ -1,0 +1,78 @@
+#!/bin/sh
+dunst="/usr/bin/dunst"
+
+fg=$(xrdb -get *.foreground)
+bg=$(xrdb -get *.background)
+
+configtemplate='
+[global]
+    monitor = 0
+    follow = mouse
+    width = 400
+    height = (0, 300) 
+    origin = top-right
+    offset = (0, 24)
+    indicate_hidden = yes
+    transparency = 0 
+    separator_height = 0
+    padding = 8
+    horizontal_padding = 8
+    text_icon_padding = 8 
+    frame_width = 0
+    frame_color = "#ffffff""
+    separator_color = frame
+    sort = yes
+    font = monospace 8
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = -1
+    ellipsize = end
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = no
+    icon_position = left
+    min_icon_size = 0
+    max_icon_size = 100
+    icon_path="/usr/share/icons/Papirus-Dark/48x48@2x/apps:/usr/share/icons/Papirus-Dark/48x48@2x/categories:/usr/share/icons/Papirus-Dark/48x48@2x/devices:/usr/share/icons/Papirus-Dark/48x48@2x/places:/usr/share/icons/Papirus-Dark/48x48@2x/mimetypes:/usr/share/icons/Papirus-Dark/48x48@2x/status:/usr/share/icons/Papirus-Dark/48x48@2x/emotes:/usr/share/icons/Papirus-Dark/48x48@2x/actions:/usr/share/icons/Papirus-Dark/48x48@2x/emblems"
+    sticky_history = yes
+    history_length = 20
+    dmenu = /usr/bin/rofi
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Notification
+    corner_radius = 0
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+    mouse_left_click = do action, close_current
+    mouse_middle_click = close_all 
+    mouse_right_click = close_current
+
+[experimental]
+    per_monitor_dpi = false
+
+[urgency_low]
+    background = "'${bg}'"
+    foreground = "'${fg}'"
+    timeout = 10
+    default_icon = /usr/share/icons/Papirus-Dark/48x48@2x/status/messagebox_info.svg
+
+[urgency_normal]
+    background = "'${bg}'"
+    foreground = "'${fg}'"
+    timeout = 10
+
+[urgency_critical]
+    background = "'${bg}'"
+    foreground = "'${fg}'"
+    timeout = 0
+'
+
+killall $dunst
+
+echo "$configtemplate" | $dunst -config -

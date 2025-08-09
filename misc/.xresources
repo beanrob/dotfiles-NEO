@@ -1,23 +1,28 @@
 ! X colors.
-#include ".cache/wal/colors.Xresources"
+#include "dots/colourschemes/hellfire.xresources"
 
-XTerm.vt1--.font: trigon
+*.foreground: fg
+*.background: bg
+*.color0:     colour0
+*.color1:     colour1
+*.color2:     colour2
+*.color3:     colour3
+*.color4:     colour4
+*.color5:     colour5
+*.color6:     colour6
+*.color7:     colour7
+*.color8:     colour8
+*.color9:     colour9
+*.color10:    colour10
+*.color11:    colour11
+*.color12:    colour12
+*.color13:    colour13
+*.color14:    colour14
+*.color15:    colour15
 
-iw3m.foreground: *.foreground
-iw3m.background: *.background
-iw3m.color0: *.color0
-iw3m.color1: *.color1
-iw3m.color2: *.color2
-iw3m.color3: *.color3
-iw3m.color4: *.color4
-iw3m.color5: *.color5
-iw3m.color6: *.color6
-iw3m.color7: *.color7
-iw3m.color8: *.color8
-iw3m.color9: *.color9
-iw3m.color10: *.color10
-iw3m.color11: *.color11
-iw3m.color12: *.color12
-iw3m.color13: *.color13
-iw3m.color14: *.color14
-iw3m.color15: *.color15
+
+URxvt.cursorColor: fg
+URxvt.borderColor: bg
+URxvt.font:        -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
+URxvt.italicFont:  -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
+URxvt.boldFont:    -*-tewi-bold-r-*-*-11-*-*-*-*-*-*-*

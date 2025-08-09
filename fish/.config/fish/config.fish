@@ -19,7 +19,7 @@ function fish_prompt
 end
 
 function fish_right_prompt
-	echo -e (set_color white)"[\e[3m"(date '+%H:%M:%S')"\e[0m]"
+	echo -e (set_color white)"[\e[3m"(date '+%H:%M:%S')"]\e[0m"
 end
 
 function fish_greeting
@@ -74,7 +74,7 @@ fish_config theme choose "fish default"
 # Applications
 alias top="htop"
 alias fm="ranger"
-export TERM="alacritty"
+export TERMINAL="urxvt"
 export MUSICPLAYER="$TERM -e ncmpcpp"
 export BROWSER="firefox"
 export EDITOR=vim

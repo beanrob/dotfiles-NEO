@@ -1,5 +1,5 @@
 tools:
-  alacritty: alacritty/alacritty
+  urxvt: rxvt-unicode/rxvt-unicode
   fish: fish-shell/fish-shell
   vim: vim/vim
   tmux: tmux/tmux
@@ -16,7 +16,6 @@ tools:
   neofetch: dylanaraps/neofetch
   picom: yshui/picom
   redshift: jonls/redshift
-  pywal: dylanaraps/pywal
   dunst: dunst-project/dunst
 
   feh: derf/feh

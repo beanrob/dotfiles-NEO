@@ -1,0 +1,23 @@
+#define fg        #d0c8c6
+#define bg        #3b3228
+
+! Colors 0-15.
+#define colour0   #3b3228
+#define colour1   #cb6077
+#define colour2   #beb55b
+#define colour3   #f4bc87
+#define colour4   #8ab3b5
+#define colour5   #a89bb9
+#define colour6   #7bbda4
+#define colour7   #d0c8c6
+#define colour8   #7e705a
+#define colour9   #cb6077
+#define colour10  #beb55b
+#define colour11  #f4bc87
+#define colour12  #8ab3b5
+#define colour13  #a89bb9
+#define colour14  #7bbda4
+#define colour15  #f5eeeb
+
+! Black color that will not be affected by bold highlighting.
+#define colour66  #3b3228
