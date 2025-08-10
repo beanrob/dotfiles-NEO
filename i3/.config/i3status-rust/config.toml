@@ -1,4 +1,5 @@
-icons_format = "{icon}"
+#icons_format = "{icon}"
+icons_format = ""
 
 [theme]
 theme = "native"

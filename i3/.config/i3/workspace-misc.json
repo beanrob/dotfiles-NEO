@@ -25,11 +25,11 @@
                "y": 0
             },
             "marks": [],
-            "name": "clock",
+            "name": "music",
             "percent": 1,
             "swallows": [
                {
-                  "class": "clock"
+                  "instance": "music"
                }
             ],
             "type": "con"
