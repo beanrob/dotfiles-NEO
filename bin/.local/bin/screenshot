@@ -1,9 +1,15 @@
 #!/bin/sh
 file=$(date +%Y-%m-%d_%H-%M-%S.png)
-scrot -s -f $file
-mv $file "${HOME}/pics/0 screenshots/"
-if [ -e "${HOME}/pics/0 screenshots/${file}" ]
+scrot $1 -f $file
+if [ "$2" = "-t" ]
+then
+    path="/tmp/${file}"
+else
+    path="${HOME}/pics/0 screenshots/${file}"
+fi
+mv "${file}" "${path}"
+if [ -e "${path}" ]
 then
     notify-send "Screenshot taken." --icon=image-missing
-    dragon-drop "${HOME}/pics/0 screenshots/${file}"
+    dragon-drop "${path}"
 fi
