@@ -24,3 +24,6 @@ tools:
   playerctl: altdesktop/playerctl
   scrot: dreamer/scrot
   dragon-drop: mwh/dragon
+
+  tewi: lucy/tewi-font
+  cozette: the-moonwitch/cozette
