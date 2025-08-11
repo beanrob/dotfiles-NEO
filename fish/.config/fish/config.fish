@@ -60,7 +60,7 @@ export WINEPREFIX="$XDG_DATA_HOME"/wine
 export GOPATH="$XDG_DATA_HOME"/go
 
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-alias teatimer='timeout 180 tty-clock -SCcb 3; mpv --volume=150 ~/.misc/snd_moss_fanfare.wav'
+alias teatimer='timeout 180 tty-clock -scBC 3; mpv --volume=150 --no-terminal ~/.misc/snd_moss_fanfare.wav'
 # }}}
 
 # PATH ------------------------------------------------------------------------------------ {{{
