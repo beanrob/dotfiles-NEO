@@ -1,5 +1,5 @@
 ! X colors.
-#include "dots/colourschemes/hellfire.xresources"
+#include "dots/colourschemes/everforest.xresources"
 
 *.foreground: fg
 *.background: bg
@@ -21,8 +21,10 @@
 *.color15:    colour15
 
 
-URxvt.cursorColor: fg
-URxvt.borderColor: bg
-URxvt.font:        -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
-URxvt.italicFont:  -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
-URxvt.boldFont:    -*-tewi-bold-r-*-*-11-*-*-*-*-*-*-*
+URxvt.cursorColor:     fg
+URxvt.borderColor:     bg
+URxvt.cursorUnderline: true
+URxvt.internalBorder:  8
+URxvt.font:            -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
+URxvt.italicFont:      -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
+URxvt.boldFont:        -*-tewi-bold-r-*-*-11-*-*-*-*-*-*-*
