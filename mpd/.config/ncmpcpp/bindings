@@ -1,5 +1,5 @@
 def_key "Q"
-    run_external_command "song-cover"
+    run_external_command "song-cover view"
 def_key "L"
   show_lyrics
 
