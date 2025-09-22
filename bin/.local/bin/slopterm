@@ -1,0 +1,25 @@
+#!/bin/sh
+# credit to dalem!!!
+# i have wanted to have a script like this for ages but
+# never ended up figuring out how... source below!!!
+# code.dalem.foo/dotfiles/scripts/term.sh
+
+
+# spawn a new terminal window inside a drawn rectangle
+# edit the part with urxvt to match your terminal
+
+set -e
+
+wglyph=6        # glyph width, in pixels
+hglyph=12       # glyph height, in pixels
+border=0        # border width, in pixels
+title=0        # titlebar height, in pixels
+
+slop -o | tr 'x+' ' ' | {
+	read w h x y
+	w=$(( ( w - ( border / wglyph ) ) / wglyph ))
+	h=$(( ( ( h - ( border / hglyph ) ) / hglyph ) - ( title / hglyph ) ))
+	exec urxvt -name term -geometry ${w}x${h}+${x}+${y} &
+}
+
+#P.S i have no idea about actual orgin of this script
