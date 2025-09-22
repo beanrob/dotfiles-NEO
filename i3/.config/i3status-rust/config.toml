@@ -1,15 +1,15 @@
 #icons_format = "{icon}"
-icons_format = ""
+#icons_format = ""
 
 [theme]
 theme = "native"
 
 [icons]
-icons = "awesome6"
+icons = "none"
 
-[[block]]
-block = "music"
-format = "$icon  $combo"
+#[[block]]
+#block = "music"
+#format = "$icon  $combo"
 
 [[block]]
 block = "sound"
