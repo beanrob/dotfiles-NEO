@@ -100,6 +100,9 @@ alias ld="eza -hD --icons --no-permissions"
 # alias tree=eza -a --icons --tree		# Shows hidden files
 alias tree="eza --icons --tree"			# Doesn't show hidden files
 
+alias lsblk="lsblk | bat -l conf -p"
+alias man="batman"
+
 # Confirm before doing the thing
 alias mv="mv -i"
 alias rm="rm -i"
