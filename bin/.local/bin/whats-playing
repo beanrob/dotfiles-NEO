@@ -2,13 +2,32 @@
 
 title=$(playerctl metadata title)
 artist=$(playerctl metadata artist)
+album=$(playerctl metadata album)
+disc=$(playerctl metadata xesam:discNumber 2>/dev/null)
+track=$(playerctl metadata xesam:trackNumber 2>/dev/null)
 
-art=$(playerctl metadata mpris:artUrl)
-if [ "$art" = "" ]
+art=$(song-cover url)
+if [ $art = "" ]
 then
 	art="audio-speakers"
 fi
 
-# echo $art
+if [ $(echo $track | wc -m) = "2" ]
+then
+    track="0"$track
+fi
 
-notify-send "$title" "by $artist" --icon="$art"
+if [ $(echo $disc | wc -m) = "2" ]
+then
+    disc="0"$disc
+fi
+
+if [ "$track" = "" ]
+then
+    notify-send "mpd" "<i>$title</i> \nby <i>$artist</i>\nfrom <i>$album</i>" --icon="$art"
+elif [ "$disc" = "" ]                                    
+then                                                   
+    notify-send "mpd" "<i>$title</i> \nby <i>$artist</i>\n#$track from <i>$album</i>" --icon="$art"
+else                                                   
+    notify-send "mpd" "<i>$title</i> \nby <i>$artist</i>\n#$disc-$track from <i>$album</i>" --icon="$art"
+fi
