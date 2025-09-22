@@ -1,4 +1,5 @@
 #!/bin/sh
+xrdb ~/.xresources &&
 
 # Compositor
 # picom -b &
@@ -26,5 +27,4 @@ battery-notify &
 setxkbmap -layout us -option caps:escape &
 
 # Restore wallpaper and load colours
-~/.fehbg &
-xrdb ~/.xresources
+~/.fehbg
