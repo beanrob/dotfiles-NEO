@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ "$(tmux ls | grep main)" != "main" ]
+if [ "$(tmux ls | grep -o main)" != "main" ]
 then
   # tmux new-session -d -s main "beanstat && fish" && tmux new-window -t main -n music ncmpcpp && tmux new-window -t main -n mail mutt && tmux new-window -t main -n feed "newsboat -r";
   tmux new-session -d -s main "beanstat && fish"
