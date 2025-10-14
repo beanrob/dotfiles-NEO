@@ -79,8 +79,8 @@ done
 
 echo "│"
 
-internet=$(ping -c 1 bbc.co.uk > /dev/null; echo $?)
-if [ $internet = "0"  ]; then
+{ internet=$(ping -c 1 bbc.co.uk > /dev/null; echo $?) ; } 2> /dev/null ;
+if [ "$internet" = "0"  ]; then
     echo -e "├─ ${BOLD}WEATHER${RESET}"
     if [ ! -f /tmp/weather  ]; then
         weather > /dev/null
