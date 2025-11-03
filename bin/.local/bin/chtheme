@@ -1,0 +1,15 @@
+#!/bin/sh
+cd
+echo '#include "'"dots/colourschemes/${1}.xresources"'"' > .theme.xresources
+if [ "${2}" != "" ]
+then
+    if [ $(echo $1 | grep -o tiling) ]
+    then
+        feh --bg-tile "pics/1 wallpapers/${2}.png"
+    else
+        feh --bg-fill "pics/1 wallpapers/${2}.png"
+    fi
+fi
+xrdb .xresources
+i3-msg restart
+dunst &
