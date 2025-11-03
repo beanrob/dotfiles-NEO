@@ -43,5 +43,6 @@ elif [ $1 = "important" ]; then
     cp -r ${HOME}/docs/0\ IMPORTANT/* ${HOME}/data/backup/important/${datetime}/
 
 elif [ $1 = "backups" ]; then
-    rsync -tavzP /home/bean/data/backups/ bean@bruno.scrungle.online:/mnt/disk2/backups/
+    mkdir "/run/media/bean/beanstick/data/backup/${datetime}"
+    cp -r ${HOME}/data/backup/* /run/media/bean/beanstick/data/backup/${datetime}/
 fi
