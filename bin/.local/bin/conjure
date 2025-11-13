@@ -1,2 +1,0 @@
-#!/bin/sh
-wget "https://scrungle.online/upload/${1}"
