@@ -1,5 +1,5 @@
 #define fg        #bdbdbd
-#define bg        #101010
+#define bg        #080808
 
 ! Colors 0-15.
 #define colour0   #323437
