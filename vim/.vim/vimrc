@@ -38,7 +38,6 @@ set hlsearch		    " Enable searching highlighted text
 set ignorecase          " Sometimes be picky about the case
 set smartcase           " of search terms
 
-set termwinsize=12x0	" Set terminal size (rows)
 set splitbelow			" Always split windows below
 set splitright			" Always split windows to the right
 set mouse=a				" Enable mouse
@@ -47,7 +46,6 @@ set nowrap              " Cut off lines at the edge of the screen
 set tabstop=4		    " How many spaces an indent is
 set shiftwidth=4
 set expandtab			" Use spaces when tabbing
-set pastetoggle=<F3>
 
 set scrolloff=8
 set sidescrolloff=8
@@ -210,6 +208,10 @@ let g:vimtex_version_check = 0
 
 " tmux integration
 Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'mk12/vim-lean'
+autocmd BufNewFile,BufRead *.lean source ~/.vim/plugged/vim-lean/syntax/lean.vim
+autocmd BufNewFile,BufRead *.lean source ~/.vim/plugged/vim-lean/ftplugin/lean.vim
 " }}}
 
 " RANGER ----------------------------------------------------------------------------------- {{{
