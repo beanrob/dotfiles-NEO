@@ -37,21 +37,6 @@ set $mod Mod4
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font -*-tewi-medium-r-*-*-11-*-*-*-*-*-*-*
 
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
-
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -246,12 +231,12 @@ bar {
     colors {
         background $bg
         statusline $fg
-        separator  $color4
+        separator  $color5
 
         focused_workspace  $color4 $color4 $fg
         active_workspace   $bg     $bg     $fg
         inactive_workspace $bg     $bg     $fg
-        urgent_workspace   $color4 $color4 $fg
+        urgent_workspace   $color5 $color5 $fg
         binding_mode       $color4 $color4 $fg
     }
     height 24
@@ -261,13 +246,16 @@ bar {
 client.focused          $color4 $color4 $color4 $color4   $color4
 client.focused_inactive $bg     $bg     $bg     $bg       $bg
 client.unfocused        $bg     $bg     $bg     $bg       $bg
-client.urgent           $color4 $color4 $color4 $color4   $color4
+client.urgent           $color5 $color5 $color5 $color5   $color5
 client.placeholder      $bg     $bg     $bg     $bg       $bg
 
 client.background       $fg
 
-gaps inner 24
-gaps outer 12
+gaps inner 12
+gaps outer 6
+
+# gaps inner 0 
+# gaps outer 0
 
 # Always floating windows
 for_window [instance="term"]    floating enable
@@ -278,9 +266,12 @@ for_window [class="steam"]      floating enable
 for_window [class="Devtools"]   floating enable
 for_window [class="Galculator"] floating enable
 
-# No titlebar
-for_window [class="firefox"] border pixel 0
-for_window [class="discord"] border pixel 0
+# Window borders
+default_border                      pixel 2
+default_floating_border             pixel 2
+for_window [class=".*"]      border pixel 2
+#for_window [class="firefox"] border pixel 0
+#for_window [class="discord"] border pixel 0
 
 # Assigned Workspaces
 assign [instance="tmux"] → home/
@@ -313,10 +304,3 @@ exec --no-startup-id "i3-msg 'workspace musi/; append_layout /home/bean/.config/
 exec --no-startup-id $TERMINAL -name music -e ncmpcpp -S clock
 
 exec --no-startup-id i3-msg 'workspace home/'
-
-#default_floating_border normal 0
-#default_border          normal 0
-default_floating_border pixel 0
-default_border          pixel 0
-
-mouse_warping output
