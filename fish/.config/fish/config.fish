@@ -60,7 +60,6 @@ export WINEPREFIX="$XDG_DATA_HOME"/wine
 export GOPATH="$XDG_DATA_HOME"/go
 
 alias wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'
-alias teatimer='timeout 180 tty-clock -scBC 3; mpv --volume=150 --no-terminal ~/.misc/snd_moss_fanfare.wav'
 # }}}
 
 # PATH ------------------------------------------------------------------------------------ {{{
@@ -72,16 +71,17 @@ fish_config theme choose "fish default"
 # }}}
 
 # ALIASES & APPLICATIONS ------------------------------------------------------------------ {{{
+alias x="startx"
+
 # Applications
 alias top="htop"
 alias fm="ranger"
 export TERMINAL="urxvt"
 export MUSICPLAYER="$TERM -e ncmpcpp"
 export BROWSER="firefox"
-export EDITOR=vim
-export VISUAL=vim
-
-alias x="startx"
+export EDITOR=nvim
+export VISUAL=nvim
+alias vim="nvim"
 
 # Pacman
 alias pac-update="yay -Syu"
@@ -89,6 +89,7 @@ alias pac-count="yay -Q | wc -l"
 alias pac-autoremove="yay -Qdtq | yay -Rs -"
 alias pac-clear="yay -Scc"
 alias pip-update="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+alias pac-big="expac '%n %m' -l'\n' -Q $(pacman -Qq) | sort -rhk 2 | less"
 
 # Output security codes
 alias ghcode="cat ~/docs/0\ IMPORTANT/GITHUB\ TOKEN"
@@ -112,6 +113,14 @@ alias ln="ln -i"
 # Misc
 alias catsay="cowsay -f cat-peekaboo"
 alias dnd="dragon-drop"
+alias yt-dlp-mp3="yt-dlp -x --audio-format mp3"
+alias teatimer='timeout 180 tty-clock -scBC 3; mpv --volume=150 --no-terminal ~/.misc/snd_moss_fanfare.wav'
+alias quickshift='redshift -x && redshift -O'
+alias fishconf='$EDITOR ~/.config/fish/config.fish && fish'
+alias i3conf='$EDITOR ~/.config/i3/config && i3-msg restart'
+alias mpdconf='$EDITOR ~/.config/mpd/mpd.conf && kill mpd && mpd && mpc play'
+alias udmount='udisksctl mount -b'
+alias udumount='udisksctl unmount -b'
 # }}}
 
 # AUTO START X ---------------------------------------------------------------------------- {{{
