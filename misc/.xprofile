@@ -7,10 +7,6 @@ xrdb ~/.xresources &&
 # Notification daemon
 dunst &
 
-# Location daemon & redshift
-/usr/lib/geoclue-2.0/demos/agent &
-redshift-gtk &
-
 # Network manager
 nm-applet &
 
