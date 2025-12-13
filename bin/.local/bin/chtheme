@@ -1,6 +1,7 @@
 #!/bin/sh
 cd
 echo '#include "'"dots/colourschemes/${1}.xresources"'"' > .theme.xresources
+echo "colorscheme ${1}" > .config/nvim/colourscheme.vim
 if [ "${2}" != "" ]
 then
     if [ $(echo $1 | grep -o tiling) ]
