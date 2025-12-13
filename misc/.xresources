@@ -1,5 +1,5 @@
 ! X colors.
-#include "dots/colourschemes/everforest.xresources"
+#include ".theme.xresources"
 
 *.foreground: fg
 *.background: bg
