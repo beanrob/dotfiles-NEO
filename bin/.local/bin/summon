@@ -1,6 +1,2 @@
 #!/bin/sh
-. ~/docs/0\ IMPORTANT/SCRUNGLE\ KEY.sh
-file=$1
-output=$(curl -s -X POST -F "file=@$file" -F "password=$key" 'https://scrungle.online/upload/upload.php')
-removed=$(echo $output | rev | cut -c 1- | rev)
-echo $removed
+wget "https://scrungle.online/upload/${1}"
