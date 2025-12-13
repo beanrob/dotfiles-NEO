@@ -30,7 +30,6 @@ command! MakeTags !ctags -R .
 let mapleader = " "
 
 noremap U :redo<CR>
-noremap Q @
 
 inoremap ii <Esc>
 noremap <leader>t :term<CR>
@@ -129,8 +128,11 @@ let g:vimtex_version_check = 0
 " tmux integration
 Plug 'christoomey/vim-tmux-navigator'
 
-" Colourscheme
+" Colourschemes
 Plug 'dylanaraps/wal.vim'
+Plug 'bluz71/vim-moonfly-colors', { 'as': 'moonfly' }
+Plug 'calind/selenized.nvim', { 'as': 'selenized' }
+Plug 'dasch/vim-mocha', { 'as': 'mocha' }
 
 Plug 'Julian/lean.nvim'
 
@@ -143,9 +145,11 @@ require('lean').setup{ mappings = true }
 EOF
 
 " COLOURS ----------------------------------------------------------------------
-colorscheme wal
+set termguicolors
+source ~/.config/nvim/colourscheme.vim
 
 " OPTIONS 2 --------------------------------------------------------------------
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set conceallevel=0
